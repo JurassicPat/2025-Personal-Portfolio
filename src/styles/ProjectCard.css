@@ -1,0 +1,54 @@
+/* src/styles/ProjectCard.css */
+
+.project-card-section {
+  position: relative;
+  background-color: #1a1a1a;
+}
+
+.project-image {
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  height: auto;
+}
+
+.project-content {
+  color: white;
+}
+
+.project-number {
+  font-size: 1.5rem;
+  color: var(--accent, #f7c948);
+}
+
+/* Dashed vertical line (timeline) */
+.project-card-section::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  border-left: 4px dashed rgba(255, 255, 255, 0.4);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.flipped .project-content {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .project-card-section::before {
+    left: 8%;
+  }
+
+  .project-content {
+    text-align: center !important;
+    padding: 1rem;
+  }
+
+  .flipped .project-content {
+    text-align: center !important;
+  }
+}

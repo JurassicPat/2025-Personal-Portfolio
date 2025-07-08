@@ -1,0 +1,19 @@
+/* src/styles/Footer.css */
+
+.site-footer {
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.site-footer small {
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-footer {
+    color: #888;
+  }
+}

@@ -1,0 +1,61 @@
+/* src/styles/About.css */
+
+.about-page {
+  background: #1a1a1a;
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero Section */
+.about-hero-section {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), #111),
+              url('../assets/about-bg.png') center/cover no-repeat;
+  padding: 4rem 0;
+  position: relative;
+}
+
+/* Main Content */
+.about-body-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about-body-section p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.about-body-section h5 {
+  margin-bottom: 1rem;
+}
+
+.about-body-section ul {
+  padding-left: 0;
+}
+
+.about-body-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Vertical dashed line */
+.about-page::before {
+  content: "";
+  position: absolute;
+  left: 50px;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  border-left: 4px dashed rgba(255, 255, 255, 0.4);
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .about-page::before {
+    left: 20px;
+  }
+
+  .about-hero-section {
+    text-align: center;
+  }
+}
