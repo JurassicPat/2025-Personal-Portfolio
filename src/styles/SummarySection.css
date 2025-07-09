@@ -1,0 +1,52 @@
+/* src/styles/SummarySection.css */
+
+.summary-section {
+  color: var(--text-light);
+  padding: 4rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Top fade effect */
+.summary-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5rem;
+  width: 100%;
+  background: linear-gradient(to top, transparent, #1a1a1a);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.summary-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.summary-section p {
+  color: #ccc;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.summary-section a.btn {
+  position: relative;
+  z-index: 2;
+}
+
+.summary-footer-wrapper {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), #111),
+              url('../assets/map.png') no-repeat center center / cover;
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+  color:white;
+}

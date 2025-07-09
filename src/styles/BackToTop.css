@@ -1,0 +1,23 @@
+/* src/styles/BackToTop.css */
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1050;
+  border-radius: 50%;
+  padding: 0.6rem 0.75rem;
+}
+
+.back-to-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top-btn:hover,
+.back-to-top-btn:focus {
+  opacity: 0.85;
+}

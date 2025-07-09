@@ -1,19 +1,16 @@
 /* src/styles/Footer.css */
 
 .site-footer {
-  background-color: transparent;
+  background: transparent;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
   color: #aaa;
+  text-align: center;
+  position: relative;
+  z-index: 3; /* Ensures it's above Summary background */
 }
 
 .site-footer small {
   font-weight: 400;
   letter-spacing: 0.03em;
-}
-
-@media (prefers-color-scheme: dark) {
-  .site-footer {
-    color: #888;
-  }
 }
