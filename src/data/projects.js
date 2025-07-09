@@ -16,6 +16,9 @@ const projects = [
     opportunity: "Opportunity description here...",
     process: "Process description here...",
     results: "Results summary here...",
+    metaTitle: "Eden Church Redesign",
+    metaDescription:
+      "A complete UX revamp for Eden Church across web and mobile platforms.",
   },
   {
     id: "project2",
@@ -30,6 +33,9 @@ const projects = [
     opportunity: "...",
     process: "...",
     results: "...",
+    metaTitle: "Eden Church Redesign",
+    metaDescription:
+      "A complete UX revamp for Eden Church across web and mobile platforms.",
   },
   {
     id: "project3",
@@ -44,6 +50,9 @@ const projects = [
     opportunity: "...",
     process: "...",
     results: "...",
+    metaTitle: "Eden Church Redesign",
+    metaDescription:
+      "A complete UX revamp for Eden Church across web and mobile platforms.",
   },
 ];
 

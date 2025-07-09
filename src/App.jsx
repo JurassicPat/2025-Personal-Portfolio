@@ -1,17 +1,28 @@
 // src/App.jsx
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import AppNav from "./components/AppNav";
-import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 import "./App.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function App() {
+  const location = useLocation();
   return (
     <>
     <AppNav />
+     <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 0.3 }}
+        >
       <Outlet />
       <BackToTop />
+      </motion.div>
+      </AnimatePresence>
     </>
   );
 }

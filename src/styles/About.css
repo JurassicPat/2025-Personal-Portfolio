@@ -10,7 +10,7 @@
 /* Hero Section */
 .about-hero-section {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), #111),
-              url('../assets/about-bg.png') center/cover no-repeat;
+              url('../assets/about.jpg') center/cover no-repeat;
   padding: 4rem 0;
   position: relative;
 }

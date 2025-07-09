@@ -9,9 +9,9 @@ export default function ProjectCardsSection() {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`row align-items-center mb-5 ${index % 2 === 1 ? "flex-row-reverse" : ""}`}
+            className={`row align-items-center justify-content-center mb-5 ${index % 2 === 1 ? "flex-row-reverse" : ""}`}
           >
-            <div className="col-md-6 text-light project-content">
+            <div className="col-md-6 text-light project-content d-flex flex-column align-items-center">
               <div className="project-number">
                 {String(index + 1).padStart(2, "0")}
               </div>

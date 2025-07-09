@@ -31,6 +31,7 @@
   opacity: 0.9;
   text-align: right;
   transition: opacity 0.2s ease-in-out;
+  font-size:1rem;
 }
 
 .app-side-nav .nav-link:hover,
@@ -54,5 +55,5 @@
 .nav-link.active {
   font-weight: bold;
   color: #2dccd3 !important;
-  border-bottom: 2px solid #2dccd3;
+  /*border-bottom: 2px solid #2dccd3;*/
 }

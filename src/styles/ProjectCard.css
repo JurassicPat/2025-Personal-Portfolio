@@ -10,10 +10,6 @@
   height: auto;
 }
 
-.project-content {
-  color: white;
-}
-
 .project-number {
   font-size: 1.5rem;
   color: var(--accent, #f7c948);
@@ -36,4 +32,20 @@
   .flipped .project-content {
     text-align: center !important;
   }
+}
+
+.project-card-section .row {
+  align-items: center;
+  text-align: center;
+  margin-bottom: 7rem;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color:white;
+  height: 100%;
+  text-align: center;
+  padding: 1rem 2rem;
 }

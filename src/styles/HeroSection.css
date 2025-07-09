@@ -6,7 +6,7 @@
   color: var(--text-light);
   padding: 3rem 0;
   position: relative;
-  verflow: hidden;
+  overflow: hidden;
 }
 
 /* Add fade-out effect at the bottom */
@@ -33,16 +33,16 @@ margin-bottom:0;
   object-fit: cover;
 }
 
-.hero-links a {
+.hero-section a {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700;
   transition: opacity 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .hero-links a:hover,
 .hero-links a:focus {
   opacity: 0.8;
-  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -57,4 +57,43 @@ margin-bottom:0;
     justify-content: center;
     gap: 1rem;
   }
+}
+
+.tagline {
+  font-weight:300;
+}
+
+/* Link container */
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Chevron icon transition */
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Wiggle keyframes */
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(3px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+/* Chevron icon base */
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Wiggle on hover */
+.learn-more-link:hover .chevron-icon {
+  animation: wiggle 0.6s ease-in-out;
 }
