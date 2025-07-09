@@ -1,7 +1,7 @@
 // src/pages/About.jsx
 import React from "react";
 import "../styles/About.css";
-import backgroundImg from "../assets/about-bg.png"; // Optional if you have one
+//import backgroundImg from "../assets/about-bg.png"; // Optional if you have one
 
 export default function About() {
   return (
@@ -9,17 +9,10 @@ export default function About() {
       <section className="about-hero-section d-flex align-items-center min-vh-100">
         <div className="container">
           <div className="row align-items-center">
-            {/* Left Side Text */}
             <div className="col-md-8">
               <p className="lead">I’m</p>
               <h1 className="display-4 fw-bold">Patrick</h1>
               <p className="mb-4">UX is a journey and I’m your guide</p>
-            </div>
-
-            {/* Right Side Links */}
-            <div className="col-md-4 text-md-end">
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="d-block mb-2 text-light">LinkedIn</a>
-              <a href="/resume.pdf" target="_blank" className="d-block text-light">Resume</a>
             </div>
           </div>
         </div>

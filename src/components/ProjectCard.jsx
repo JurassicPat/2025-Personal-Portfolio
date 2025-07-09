@@ -1,36 +1,35 @@
-// src/components/ProjectCard.jsx
 import React from "react";
+import projects from "../data/projects";
 import "../styles/ProjectCard.css";
 
-export default function ProjectCard({ number, title, image, flipped = false }) {
+export default function ProjectCardsSection() {
   return (
-    <section className={`project-card-section py-5 ${flipped ? "flipped" : ""}`}>
-      <div className="container position-relative">
-        <div className="row align-items-center">
-          {/* Image Column */}
-          <div className={`col-md-6 ${flipped ? "order-md-2" : ""}`}>
-            <img
-              src={image}
-              alt={`${title} website on laptop`}
-              className="img-fluid project-image"
-            />
-          </div>
-
-          {/* Text Column */}
-          <div className={`col-md-6 ${flipped ? "order-md-1 text-md-end" : ""}`}>
-            <div className="project-content text-light px-3 px-md-5">
-              <h2 className="project-number mb-1">{number}</h2>
-              <h3 className="fw-bold">{title}</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                neque diam, hendrerit at justo quis, viverra blandit ligula.
-              </p>
-              <a href="#" className="btn btn-outline-light mt-2">
+    <section className="project-card-section py-5">
+      <div className="container">
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            className={`row align-items-center mb-5 ${index % 2 === 1 ? "flex-row-reverse" : ""}`}
+          >
+            <div className="col-md-6 text-light project-content">
+              <div className="project-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <h3>{project.title}</h3>
+              <p>{project.summary}</p>
+              <a href={`/project/${project.id}`} className="btn btn-link text-light ps-0">
                 View Website →
               </a>
             </div>
+            <div className="col-md-6 text-center">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-image"
+              />
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

@@ -5,9 +5,9 @@ import "../styles/SummarySection.css";
 export default function SummarySection() {
   return (
     <section className="summary-section">
-      <div className="container text-center text-light">
+      <div className="container text-light">
         <h2 className="mb-3">Let’s Build Something Together</h2>
-        <p className="lead mb-4">
+        <p className="lead">
           I design and develop human-centered interfaces and experiences that solve real-world problems.
         </p>
         <a href="/about" className="btn btn-outline-light">

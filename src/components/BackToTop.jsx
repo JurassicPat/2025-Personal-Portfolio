@@ -25,7 +25,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`back-to-top-btn btn btn-outline-light ${visible ? "show" : ""}`}
+      className={`back-to-top-btn ${visible ? "show" : ""}`}
       aria-label="Scroll to top"
     >
       <ChevronUp size={20} />

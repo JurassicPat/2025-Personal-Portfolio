@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="site-footer text-center py-3">
-      <small className="text-muted">
+      <small>
         &copy; {year} Patrick Watertor
       </small>
     </footer>

@@ -6,10 +6,15 @@
   right: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
   z-index: 1050;
-  border-radius: 50%;
   padding: 0.6rem 0.75rem;
+  border-radius: 1000px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .back-to-top-btn.show {
@@ -19,5 +24,11 @@
 
 .back-to-top-btn:hover,
 .back-to-top-btn:focus {
-  opacity: 0.85;
+  opacity: 0.9;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.back-to-top-btn svg {
+  height: 30px;
 }
