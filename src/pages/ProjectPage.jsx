@@ -14,7 +14,6 @@ export default function ProjectPage() {
   const prev = projects[(currentIndex - 1 + projects.length) % projects.length];
   const next = projects[(currentIndex + 1) % projects.length];
 
-  // ✅ Set title and meta inside the component
   useEffect(() => {
     document.title = `${project.title} | Patrick's Portfolio`;
 

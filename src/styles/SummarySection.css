@@ -5,9 +5,15 @@
   padding: 4rem 0 6rem;
   position: relative;
   overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
 }
 
-/* Top fade effect */
+.summary-section .container {
+  text-align: left;
+}
+
 .summary-section::before {
   content: "";
   position: absolute;
@@ -46,5 +52,33 @@
   color: var(--text-light);
   position: relative;
   overflow: hidden;
-  color:white;
+}
+
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(3px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+.learn-more-link:hover .chevron-icon {
+  animation: wiggle 0.6s ease-in-out;
 }

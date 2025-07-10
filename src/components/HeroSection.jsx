@@ -23,7 +23,7 @@ const [index, setIndex] = useState(0);
       <div className="container">
         <div className="row align-items-center">
           {/* Left Side */}
-          <div className="col-md-8 text-light">
+          <div className="col-md-4 offset-md-2 text-light">
              
             <p className="lead">
   <AnimatePresence mode="wait">
@@ -49,7 +49,7 @@ const [index, setIndex] = useState(0);
           </div>
 
           {/* Right Side */}
-          <div className="col-md-4 d-flex flex-row-reverse">
+          <div className="col-md-5 d-flex flex-row-reverse">
             <img
               src={profile}
               alt="Patrick smiling outdoors"

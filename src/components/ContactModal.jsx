@@ -30,39 +30,46 @@ export default function ContactModal({ show, onClose }) {
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="contactName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
+          <Form.Group className="form-floating mb-3">
+  <Form.Control
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Your Name"
+    value={formData.name}
+    onChange={handleChange}
+    required
+  />
+  <Form.Label htmlFor="name">Your Name</Form.Label>
+</Form.Group>
 
-          <Form.Group className="mb-3" controlId="contactEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
+<Form.Group className="form-floating mb-3">
+  <Form.Control
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Your Email"
+    value={formData.email}
+    onChange={handleChange}
+    required
+  />
+  <Form.Label htmlFor="email">Your Email</Form.Label>
+</Form.Group>
 
-          <Form.Group className="mb-3" controlId="contactMessage">
-            <Form.Label>Message</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={4}
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
+<Form.Group className="form-floating mb-3">
+  <Form.Control
+    as="textarea"
+    id="message"
+    name="message"
+    placeholder="Your Message"
+    style={{ height: "150px" }}
+    value={formData.message}
+    onChange={handleChange}
+    required
+  />
+  <Form.Label htmlFor="message">Your Message</Form.Label>
+</Form.Group>
+
 
           <div className="text-end">
             <Button variant="secondary" onClick={onClose} className="me-2">
