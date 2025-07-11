@@ -30,7 +30,7 @@ export default function ProjectCardsSection() {
                     <p className="tagline">{project.summary}</p>
                     <a
                       href={`/project/${project.id}`}
-                      className="btn btn-link text-light ps-0"
+                      className="btn btn-link text-light ps-0 chevron-link"
                     >
                       View Website <ChevronRight className="chevron-icon" />
                     </a>
@@ -47,7 +47,7 @@ export default function ProjectCardsSection() {
                     <p className="tagline">{project.summary}</p>
                     <a
                       href={`/project/${project.id}`}
-                      className="btn btn-link text-light ps-0"
+                      className="btn btn-link text-light ps-0 chevron-link"
                     >
                       View Website <ChevronRight className="chevron-icon" />
                     </a>

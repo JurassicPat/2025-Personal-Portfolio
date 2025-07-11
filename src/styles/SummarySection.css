@@ -63,10 +63,12 @@
   text-decoration: none;
 }
 
-.chevron-icon {
-  transition: transform 0.3s ease;
+/* Chevron icon transition */
+.chevron-link:hover .chevron-icon {
+  animation: wiggle 0.6s ease-in-out;
 }
 
+/* Wiggle keyframes */
 @keyframes wiggle {
   0% { transform: translateX(0); }
   25% { transform: translateX(3px); }
@@ -75,10 +77,17 @@
   100% { transform: translateX(0); }
 }
 
+/* Chevron icon base */
 .chevron-icon {
   transition: transform 0.3s ease;
 }
 
+/* Wiggle on hover */
 .learn-more-link:hover .chevron-icon {
   animation: wiggle 0.6s ease-in-out;
+}
+
+button.btn.btn-link.text-light.ps-0.chevron-link {
+text-decoration: none;
+font-weight: 700;
 }

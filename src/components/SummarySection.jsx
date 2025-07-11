@@ -18,7 +18,7 @@ export default function SummarySection() {
             </p>
 
             <button
-              className="btn btn-link nav-link text-light p-0"
+              className="btn btn-link text-light ps-0 chevron-link"
               onClick={() => setShowContact(true)}
             >
               Contact <ChevronRight className="chevron-icon" />

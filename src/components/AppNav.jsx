@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import "../styles/AppNav.css";
 import ContactModal from "./ContactModal";
 
+
 export default function AppNav() {
   const [scrolled, setScrolled] = useState(false);
   const [showContact, setShowContact] = useState(false);
