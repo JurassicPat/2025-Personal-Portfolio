@@ -11,7 +11,7 @@ export default function SummarySection() {
     <section className="summary-section">
       <div className="container text-light">
         <div className="row">
-          <div className="col-md-8 offset-md-4">
+          <div className="col-md-8 offset-md-3">
             <h2 className="mb-3">Let’s Build Something Together</h2>
             <p className="lead">
               I design and develop human-centered interfaces and experiences that solve real-world problems.

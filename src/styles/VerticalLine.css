@@ -1,0 +1,21 @@
+/* src/styles/VerticalLine.css */
+
+.vertical-line {
+      position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 2350px;
+    z-index: 90;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.vertical-line img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.25; /* adjust for visibility */
+}

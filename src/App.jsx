@@ -5,11 +5,13 @@ import AppNav from "./components/AppNav";
 import BackToTop from "./components/BackToTop";
 import "./App.css";
 import { AnimatePresence, motion } from "framer-motion";
+import VerticalLine from "./components/VerticalLine";
 
 export default function App() {
   const location = useLocation();
   return (
     <>
+      <VerticalLine />
     <AppNav />
      <AnimatePresence mode="wait">
         <motion.div

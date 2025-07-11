@@ -17,17 +17,6 @@
   z-index: 1;
 }
 
-/* Vertical dashed line */
-.vertical-line {
-  position: absolute;
-  top: 0;
-  left: 40px;
-  width: 4px;
-  height: 100%;
-  border-left: 4px dashed rgba(255, 255, 255, 0.4);
-  z-index: 0;
-}
-
 .project-body h4,
 .project-body h5 {
   color: var(--accent, #f7c948);
@@ -38,10 +27,6 @@
 }
 
 @media (max-width: 768px) {
-  .vertical-line {
-    left: 20px;
-  }
-
   .project-hero {
     text-align: center;
   }
