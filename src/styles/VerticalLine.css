@@ -18,4 +18,25 @@
   width: auto;
   object-fit: contain;
   opacity: 0.25; /* adjust for visibility */
+  mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
+  position: relative;
+}
+
+.vertical-line img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%;                 /* fade height */
+  background: linear-gradient(to bottom, transparent 0%, #1a1a1a 100%);
+  pointer-events: none;
+}
+
+/* Hide on small screens if desired */
+@media (max-width: 768px) {
+  .vertical-line {
+    display: none;
+  }
 }
