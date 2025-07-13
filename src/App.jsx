@@ -3,7 +3,6 @@ import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import AppNav from "./components/AppNav";
 import BackToTop from "./components/BackToTop";
-import "./App.css";
 import { AnimatePresence, motion } from "framer-motion";
 import VerticalLine from "./components/VerticalLine";
 

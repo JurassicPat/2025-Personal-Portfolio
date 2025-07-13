@@ -2,7 +2,7 @@
 
 .app-side-nav {
   position: fixed;
-  color:white;
+  color:var(--text-light);
   top: 1rem;
   right: 1.5rem;
   z-index: 1030;
@@ -27,7 +27,7 @@
 
 /* Nav links */
 .app-side-nav .nav-link {
-  color: #fff;
+  color:var(--text-light);
   opacity: 0.9;
   text-align: right;
   transition: opacity 0.2s ease-in-out;
@@ -54,6 +54,6 @@
 /* Example styling for the active route */
 .nav-link.active {
   font-weight: bold;
-  color: #2dccd3 !important;
+  color: var(--accent) !important;
   /*border-bottom: 2px solid #2dccd3;*/
 }

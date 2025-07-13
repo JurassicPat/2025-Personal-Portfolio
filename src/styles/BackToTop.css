@@ -12,8 +12,8 @@
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
+  border: 1px solid rgba(254, 254, 223, 0.25);
+  color: var(--text-light);
   transition: opacity 0.3s ease, transform 0.3s ease;
   display:flex;
   justify-content: center;
@@ -34,3 +34,4 @@
 .back-to-top-btn svg {
   height: 24px;
 }
+

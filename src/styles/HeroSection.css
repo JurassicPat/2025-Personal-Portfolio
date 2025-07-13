@@ -86,12 +86,11 @@ margin-bottom:0;
   100% { transform: translateX(0); }
 }
 
-/* Chevron icon base */
-.chevron-icon {
-  transition: transform 0.3s ease;
-}
-
 /* Wiggle on hover */
 .learn-more-link:hover .chevron-icon {
   animation: wiggle 0.6s ease-in-out;
+}
+
+.lead span {
+  color:var(--accent);
 }

@@ -1,5 +1,5 @@
-import project1Image from "../assets/placeholder.png";
-import project2Image from "../assets/placeholder.png";
+import project1Image from "../assets/Eden-Church.webp";
+import project2Image from "../assets/VLCT.webp";
 import project3Image from "../assets/placeholder.png";
 
 const projects = [
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     id: "project2",
-    title: "Another Project",
+    title: "Vermont League of Cities & Towns",
     image: project2Image,
     summary: "Quick summary for card.",
     year: "2022",

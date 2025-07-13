@@ -1,7 +1,12 @@
 /* src/styles/variables.css */
 :root {
-  --text-light: #ffffff;
+  --text-light: #fefedf;
   --bg-dark: #1a1a1a;
-  --accent: #f7c948;
+  --accent: #4ffbdf;
   --font-primary: 'Helvetica Neue', sans-serif;
+  --tag-line: #acac9a;
+}
+
+.tagline {
+  color:var(--tag-line);
 }
