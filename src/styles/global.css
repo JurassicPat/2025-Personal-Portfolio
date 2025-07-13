@@ -1,0 +1,25 @@
+/* src/styles/global.css */
+
+/* Load Bootstrap first */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* Variables and base overrides */
+@import "./variables.css";
+
+/* Layout and shared styling */
+@import "./AppNav.css";
+@import "./BackToTop.css";
+@import "./Footer.css";
+@import "./VerticalLine.css";
+
+/* Page-specific styles */
+@import "./About.css";
+@import "./ContactModal.css";
+@import "./HeroSection.css";
+/* @import "./NotFound.css"; */
+@import "./ProjectCard.css";
+@import "./ProjectTemplate.css";
+@import "./SummarySection.css";
+
+/* Root app-level styles */
+@import "../App.css";

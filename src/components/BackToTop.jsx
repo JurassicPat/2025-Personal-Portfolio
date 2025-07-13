@@ -1,7 +1,6 @@
 // src/components/BackToTop.jsx
 import React, { useState, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
-import "../styles/BackToTop.css";
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);

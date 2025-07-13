@@ -1,7 +1,6 @@
 // src/components/HeroSection.jsx
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "../styles/HeroSection.css";
 import profile from "../assets/patrick.png";
 import { ChevronRight } from "lucide-react";
 

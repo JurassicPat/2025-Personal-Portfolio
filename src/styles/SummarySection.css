@@ -34,8 +34,6 @@
 }
 
 .summary-section p {
-  color: #ccc;
-  font-size: 1.1rem;
   max-width: 600px;
   position: relative;
   z-index: 2;
@@ -61,6 +59,7 @@
   font-weight: 500;
   transition: color 0.3s ease;
   text-decoration: none;
+  color: var(--accent);
 }
 
 /* Chevron icon transition */
@@ -77,12 +76,10 @@
   100% { transform: translateX(0); }
 }
 
-/* Chevron icon base */
 .chevron-icon {
   transition: transform 0.3s ease;
 }
 
-/* Wiggle on hover */
 .learn-more-link:hover .chevron-icon {
   animation: wiggle 0.6s ease-in-out;
 }

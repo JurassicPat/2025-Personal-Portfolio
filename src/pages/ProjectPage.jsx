@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import projects from "../data/projects";
 import ProjectTemplate from "../components/ProjectTemplate";
+import Footer from "../components/Footer";
 
 export default function ProjectPage() {
   const { id } = useParams();

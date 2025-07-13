@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ProjectTemplate.css";
+import Footer from "../components/Footer";
 
 export default function ProjectTemplate({
   heroImage,
@@ -82,6 +82,7 @@ export default function ProjectTemplate({
           <a href={nextLink} className="text-light text-decoration-none">Next Project</a>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

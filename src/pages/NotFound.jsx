@@ -1,6 +1,7 @@
 // src/pages/NotFound.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 import "../styles/NotFound.css"
 
 export default function NotFound() {
@@ -11,6 +12,7 @@ export default function NotFound() {
       <Link to="/" className="btn btn-outline-light mt-3">
         Go Back Home
       </Link>
+<Footer />
     </main>
   );
 }

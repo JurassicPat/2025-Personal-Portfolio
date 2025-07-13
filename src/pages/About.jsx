@@ -1,7 +1,7 @@
 // src/pages/About.jsx
 import React from "react";
 import "../styles/About.css";
-//import backgroundImg from "../assets/about-bg.png"; // Optional if you have one
+import Footer from "../components/Footer";
 
 export default function About() {
   return (
@@ -86,6 +86,7 @@ export default function About() {
             </p>
           </div>
         </div>
+        <Footer />
       </section>
     </main>
   );

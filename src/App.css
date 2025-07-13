@@ -15,3 +15,11 @@ input, textarea, select, button {
 h1, h2, h3, h4, p {
   color:var(--text-light);
 }
+
+input {
+  box-shadow:none !important;
+}
+
+.honeypot-field {
+  display: none;
+}
