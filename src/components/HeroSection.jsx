@@ -12,7 +12,7 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((i) => (i + 1) % greetings.length);
-    }, 2000); // change every 2s
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -21,7 +21,7 @@ export default function HeroSection() {
       <div className="container">
         <div className="row align-items-center">
           {/* Left Side */}
-          <div className="col-md-4 offset-md-2 text-light">
+          <div className="col-md-4 offset-md-2">
             <p className="lead">
               <AnimatePresence mode="wait">
                 <motion.span
@@ -42,12 +42,10 @@ export default function HeroSection() {
             <p className="mb-4 tagline">
               I create user-driven designs and journeys
             </p>
-            <a href="/about" className="text-light learn-more-link">
+            <a href="/about" className="learn-more-link">
               Learn More About Me <ChevronRight className="chevron-icon" />
             </a>
           </div>
-
-          {/* Right Side */}
           <div className="col-md-5 d-flex flex-row-reverse">
             <img
               src={profile}

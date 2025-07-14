@@ -64,3 +64,46 @@ border-color: transparent !important;
 border-radius:0px;
 }
 
+textarea#message {
+  border:none;
+  box-shadow:none;
+}
+
+input#name, input#email, textarea#message {
+    border-bottom: 1px solid var(--black-alt) !important;
+    border-radius: 0;
+    color: var(--black-alt);
+}
+
+.form-floating {
+  padding: 0 .75rem;
+}
+
+.cancel-button {
+  background-color:transparent;
+  color:var(--black-alt);
+  border:none;
+  font-size: .85rem;
+}
+
+.cancel-button:hover {
+  background-color:transparent;
+  color:var(--red-alt);
+  transition: .2s ease-in-out;
+}
+
+.btn-close:hover {
+color:var(--red-alt) !important;
+  transition: .2s ease-in-out;
+}
+
+.text-end {
+  display:flex;
+  justify-content: space-between;
+}
+
+.learn-more-link.send-button {
+  color:var(--accent);
+  background-color:var(--black-alt);
+  border: 0px solid white;
+}

@@ -59,7 +59,6 @@
   font-weight: 500;
   transition: color 0.3s ease;
   text-decoration: none;
-  color: var(--accent);
 }
 
 /* Chevron icon transition */

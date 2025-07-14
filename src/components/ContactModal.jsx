@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useForm, ValidationError } from "@formspree/react";
-import "../styles/ContactModal.css"; // make sure this exists
+import { ChevronRight } from "lucide-react";
 
 export default function ContactModal({ show, onClose }) {
   const [formData, setFormData] = useState({
@@ -37,7 +37,7 @@ export default function ContactModal({ show, onClose }) {
   return (
     <div className="contact-modal-wrapper">
       <Modal show={show} onHide={onClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>Get in Touch</Modal.Title>
         </Modal.Header>
 
@@ -105,18 +105,19 @@ export default function ContactModal({ show, onClose }) {
 
               <div className="text-end">
                 <Button
+                  type="submit"
+                  variant="primary learn-more-link send-button"
+                  disabled={state.submitting}
+                >
+                  Send a Message<ChevronRight className="chevron-icon" />
+                </Button>
+                
+                <Button
                   variant="secondary"
                   onClick={onClose}
                   className="me-2 cancel-button"
                 >
-                  Cancel
-                </Button>
-                <Button
-                  type="submit"
-                  variant="primary send-button"
-                  disabled={state.submitting}
-                >
-                  Send
+                  Dismiss
                 </Button>
               </div>
             </Form>
