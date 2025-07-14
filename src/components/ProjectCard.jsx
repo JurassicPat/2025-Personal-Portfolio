@@ -29,9 +29,9 @@ export default function ProjectCardsSection() {
                     <p className="tagline">{project.summary}</p>
                     <a
                       href={`/project/${project.id}`}
-                      className="btn btn-link text-light ps-0 chevron-link"
+                      className="ps-0 chevron-link"
                     >
-                      View Website <ChevronRight className="chevron-icon" />
+                      View Project <ChevronRight className="chevron-icon" />
                     </a>
                   </div>
                 </>
@@ -46,9 +46,9 @@ export default function ProjectCardsSection() {
                     <p className="tagline">{project.summary}</p>
                     <a
                       href={`/project/${project.id}`}
-                      className="btn btn-link text-light ps-0 chevron-link"
+                      className="chevron-link"
                     >
-                      View Website <ChevronRight className="chevron-icon" />
+                      View Project <ChevronRight className="chevron-icon" />
                     </a>
                   </div>
                   <div className="col-md-6 text-center">

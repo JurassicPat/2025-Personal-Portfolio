@@ -1,5 +1,27 @@
+.modal-body {
+  padding:1.5rem;
+}
+
+.modal-content,
+.form-control {
+  background-color: var(--bg-dark);
+  color:var(--tag-line);
+}
+
+.modal-header {
+  padding:1.5rem;
+}
+
 .form-floating input {
   border:0px;
+}
+
+label.form-label {
+  padding:0;
+}
+
+.modal-title {
+  color:var(--text-light);
 }
 
 .form-control:focus {
@@ -17,11 +39,12 @@
 
 .form-floating > .form-control,
 .form-floating > .form-control:focus {
-  color: #fff;
+  color:var(--tag-line);
+  background-color: var(--bg-dark);
 }
 
 .form-floating > label {
-  color: #aaa;
+  color:var(--tag-line);
 }
 
 .modal-header {
@@ -70,18 +93,14 @@ textarea#message {
 }
 
 input#name, input#email, textarea#message {
-    border-bottom: 1px solid var(--black-alt) !important;
+    border-bottom: 1px solid var(--tag-line) !important;
     border-radius: 0;
-    color: var(--black-alt);
-}
-
-.form-floating {
-  padding: 0 .75rem;
+    color: var(--text-light);
 }
 
 .cancel-button {
   background-color:transparent;
-  color:var(--black-alt);
+  color:var(--tag-line);
   border:none;
   font-size: .85rem;
 }
@@ -103,7 +122,7 @@ color:var(--red-alt) !important;
 }
 
 .learn-more-link.send-button {
-  color:var(--accent);
+  color:var(--mustard);
   background-color:var(--black-alt);
   border: 0px solid white;
 }

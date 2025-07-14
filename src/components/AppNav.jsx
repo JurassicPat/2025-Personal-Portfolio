@@ -58,7 +58,7 @@ export default function AppNav() {
           LinkedIn
         </a>
 
-        <a href="/resume.pdf" target="_blank" className="nav-link text-light">
+        <a href="./public/Patrick-Watertor-2025-Resume.pdf" target="_blank" className="nav-link text-light">
           Resume
         </a>
       </div>

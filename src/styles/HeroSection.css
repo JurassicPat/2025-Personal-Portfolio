@@ -35,15 +35,17 @@ margin-bottom:0;
 
 .hero-section a {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 500;
   transition: opacity 0.2s ease-in-out;
   text-decoration: none;
   color:var(--mustard);
 }
 
-.hero-links a:hover,
-.hero-links a:focus {
+.hero-section a:hover,
+.hero-section a:focus,
+.hero-section a:active {
   opacity: 0.8;
+  color:var(--mustard);
 }
 
 @media (max-width: 768px) {

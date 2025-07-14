@@ -1,7 +1,7 @@
 // src/pages/About.jsx
 import React from "react";
-import "../styles/About.css";
 import Footer from "../components/Footer";
+import { Gem, Github } from "lucide-react";
 
 export default function About() {
   return (
@@ -84,6 +84,12 @@ export default function About() {
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque diam...
             </p>
+            <p><a href="https://moxfield.com/users/JurassicPat" className="learn-more-link">
+              <Gem /> Moxfield
+            </a></p>
+             <p><a href="https://github.com/JurassicPat" className="learn-more-link">
+              <Github /> Github
+            </a></p>
           </div>
         </div>
         <Footer />

@@ -52,13 +52,16 @@
   overflow: hidden;
 }
 
-.learn-more-link {
+.learn-more-link.chevron-link {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+   font-size: 0.9rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: opacity 0.2s ease-in-out;
   text-decoration: none;
+  color:var(--mustard);
+  cursor:pointer;
 }
 
 /* Chevron icon transition */

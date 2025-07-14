@@ -8,7 +8,7 @@ export default function SummarySection() {
 
   return (
     <section className="summary-section">
-      <div className="container text-light">
+      <div className="container">
         <div className="row">
           <div className="col-md-8 offset-md-3">
             <h2 className="mb-3">Let’s Build Something Together</h2>
@@ -16,12 +16,12 @@ export default function SummarySection() {
               I design and develop human-centered interfaces and experiences that solve real-world problems.
             </p>
 
-            <button
-              className="btn btn-link text-light ps-0 chevron-link learn-more-link"
+            <a
+              className="learn-more-link chevron-link"
               onClick={() => setShowContact(true)}
             >
               Contact <ChevronRight className="chevron-icon" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

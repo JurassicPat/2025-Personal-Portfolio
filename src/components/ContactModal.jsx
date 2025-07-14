@@ -60,7 +60,7 @@ export default function ContactModal({ show, onClose }) {
                 />
               </Form.Group>
 
-              <Form.Group className="form-floating mb-3">
+              <Form.Group className="form-floating mb-4">
                 <Form.Control
                   type="text"
                   id="name"
@@ -74,7 +74,7 @@ export default function ContactModal({ show, onClose }) {
                 <ValidationError prefix="Name" field="name" errors={state.errors} />
               </Form.Group>
 
-              <Form.Group className="form-floating mb-3">
+              <Form.Group className="form-floating mb-4">
                 <Form.Control
                   type="email"
                   id="email"
@@ -88,7 +88,7 @@ export default function ContactModal({ show, onClose }) {
                 <ValidationError prefix="Email" field="email" errors={state.errors} />
               </Form.Group>
 
-              <Form.Group className="form-floating mb-3">
+              <Form.Group className="form-floating mb-4">
                 <Form.Control
                   as="textarea"
                   id="message"
