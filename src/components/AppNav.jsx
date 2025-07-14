@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import ContactModal from "./ContactModal";
+import { Linkedin } from "lucide-react";
 
 export default function AppNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,7 +56,7 @@ export default function AppNav() {
           rel="noreferrer"
           className="nav-link text-light"
         >
-          LinkedIn
+          <Linkedin />
         </a>
 
         <a href="./public/Patrick-Watertor-2025-Resume.pdf" target="_blank" className="nav-link text-light">
