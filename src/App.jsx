@@ -1,6 +1,5 @@
-// src/App.jsx
-import React, { useEffect }  from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Outlet, useLocation, useMatches } from "react-router-dom";
 import AppNav from "./components/AppNav";
 import BackToTop from "./components/BackToTop";
 import { AnimatePresence, motion } from "framer-motion";
@@ -8,28 +7,32 @@ import VerticalLine from "./components/VerticalLine";
 
 export default function App() {
   const location = useLocation();
+  const matches = useMatches();
 
   useEffect(() => {
-    // Derive class name from path
-    const path = location.pathname === "/" ? "home" : location.pathname.slice(1).replaceAll("/", "-");
-    const pageClass = `${path}-page`;
+    // Check if the deepest matched route has a handle with pageClass
+    const match = matches[matches.length - 1];
+    const pageClass =
+      match?.handle?.pageClass ||
+      (location.pathname === "/" ? "home" : location.pathname.slice(1).replaceAll("/", "-"));
 
-    // Update <body> class
+    // Clear existing page classes
     document.body.classList.forEach((cls) => {
       if (cls.endsWith("-page")) document.body.classList.remove(cls);
     });
-    document.body.classList.add(pageClass);
 
-    // Clean up on unmount (optional)
+    document.body.classList.add(`${pageClass}-page`);
+
     return () => {
-      document.body.classList.remove(pageClass);
+      document.body.classList.remove(`${pageClass}-page`);
     };
-  }, [location]);
+  }, [location, matches]);
 
   return (
     <>
       <VerticalLine />
       <AppNav />
+      <div className="app-wrapper">
       <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
@@ -42,6 +45,7 @@ export default function App() {
           <BackToTop />
         </motion.div>
       </AnimatePresence>
+      </div>
     </>
   );
 }

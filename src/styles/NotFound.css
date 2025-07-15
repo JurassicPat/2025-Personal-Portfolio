@@ -1,0 +1,67 @@
+.not-found-page .vertical-line {
+  display: none !important;
+}
+
+.not-found-page {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), #111),
+              url('../assets/background.png') no-repeat center center / cover;
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add fade-out effect at the bottom */
+.not-found-page::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  background: linear-gradient(to bottom, transparent, #1a1a1a);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.not-found-page a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease-in-out;
+  text-decoration: none;
+  color:var(--mustard);
+}
+
+.hero-section a:hover,
+.hero-section a:focus,
+.hero-section a:active {
+  opacity: 0.8;
+  color:var(--mustard);
+}
+
+/* Link container */
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Chevron icon transition */
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Wiggle keyframes */
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(3px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+/* Wiggle on hover */
+.learn-more-link:hover .chevron-icon {
+  animation: wiggle 0.6s ease-in-out;
+}

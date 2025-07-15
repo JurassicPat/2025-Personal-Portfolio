@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 import projects from "../data/projects";
 import { ChevronRight } from "lucide-react";
+import FadeInWhenVisible from "./FadeInWhenVisible";
 
 export default function ProjectCardsSection() {
   return (
     <section className="project-card-section py-5">
       <div className="container-fluid">
-        {projects.map((project, index) => {
-          return (
-            <div key={project.id} className="row align-items-center mb-5">
+        {projects.map((project, index) => (
+          <FadeInWhenVisible key={project.id} delay={index * 0.2}>
+            <div className="row align-items-center mb-5">
               {index === 1 ? (
-                // Project 2: Image left (offset-md-2), Text right
                 <>
                   <div className="col-md-6 offset-md-1 text-center">
                     <img
@@ -36,7 +35,6 @@ export default function ProjectCardsSection() {
                   </div>
                 </>
               ) : (
-                // Projects 1 and 3: Text center (offset-md-4), Image right
                 <>
                   <div className="col-md-3 offset-md-3 project-content text-light d-flex flex-column">
                     <div className="project-number">
@@ -62,8 +60,8 @@ export default function ProjectCardsSection() {
                 </>
               )}
             </div>
-          );
-        })}
+          </FadeInWhenVisible>
+        ))}
       </div>
     </section>
   );

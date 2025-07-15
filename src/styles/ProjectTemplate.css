@@ -31,3 +31,7 @@
     text-align: center;
   }
 }
+
+.home-page .project-image {
+  max-width: 600px;
+}

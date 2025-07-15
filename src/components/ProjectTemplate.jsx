@@ -1,5 +1,7 @@
+// src/components/ProjectTemplate.jsx
 import React from "react";
 import Footer from "../components/Footer";
+import FadeInWhenVisible from "./FadeInWhenVisible";
 
 export default function ProjectTemplate({
   heroImage,
@@ -27,61 +29,86 @@ export default function ProjectTemplate({
       >
         <div className="container text-light">
           <p className="lead">I’m</p>
-          <h1 className="display-4 fw-bold">{title}</h1>
+          <h1 className="display-4 fw-bold" aria-label={`Project by ${title}`}>{title}</h1>
           <p>{subtitle}</p>
         </div>
       </div>
 
       {/* Content */}
-      <div className="container py-5 text-light project-body">
+      <div className="container text-light project-body">
         <div className="vertical-line"></div>
 
         {/* Overview */}
-        <div className="mb-5">
-          <h4>Overview</h4>
-          <p>{overview}</p>
-        </div>
+        <FadeInWhenVisible>
+          <div className="mb-5">
+            <h2>Overview</h2>
+            <p>{overview}</p>
+          </div>
+        </FadeInWhenVisible>
 
         {/* Role/Platforms/Year */}
-        <div className="row mb-5">
-          <div className="col-md-4">
-            <h5>Role</h5>
-            <p>{role}</p>
+        <FadeInWhenVisible direction="left">
+          <div className="row mb-5">
+            <div className="col-md-4">
+              <h3>Role</h3>
+              <p>{role}</p>
+            </div>
+            <div className="col-md-4">
+              <h3>Platforms</h3>
+              <p>{platforms}</p>
+            </div>
+            <div className="col-md-4">
+              <h3>Year</h3>
+              <p>{year}</p>
+            </div>
           </div>
-          <div className="col-md-4">
-            <h5>Platforms</h5>
-            <p>{platforms}</p>
-          </div>
-          <div className="col-md-4">
-            <h5>Year</h5>
-            <p>{year}</p>
-          </div>
-        </div>
+        </FadeInWhenVisible>
 
-        {/* Sections */}
-        <div className="mb-5">
-          <h5>Problem</h5>
-          <p>{problem}</p>
-        </div>
-        <div className="mb-5">
-          <h5>Opportunity</h5>
-          <p>{opportunity}</p>
-        </div>
-        <div className="mb-5">
-          <h5>Process</h5>
-          <p>{process}</p>
-        </div>
-        <div className="mb-5">
-          <h5>Results</h5>
-          <p>{results}</p>
-        </div>
+        {/* Problem */}
+        <FadeInWhenVisible>
+          <div className="mb-5">
+            <h3>Problem</h3>
+            <p>{problem}</p>
+          </div>
+        </FadeInWhenVisible>
+
+        {/* Opportunity */}
+        <FadeInWhenVisible direction="right">
+          <div className="mb-5">
+            <h3>Opportunity</h3>
+            <p>{opportunity}</p>
+          </div>
+        </FadeInWhenVisible>
+
+        {/* Process */}
+        <FadeInWhenVisible>
+          <div className="mb-5">
+            <h3>Process</h3>
+            <p>{process}</p>
+          </div>
+        </FadeInWhenVisible>
+
+        {/* Results */}
+        <FadeInWhenVisible direction="left">
+          <div className="mb-5">
+            <h3>Results</h3>
+            <p>{results}</p>
+          </div>
+        </FadeInWhenVisible>
 
         {/* Pagination */}
-        <div className="d-flex justify-content-between mt-5">
-          <a href={prevLink} className="text-light text-decoration-none">Previous Project</a>
-          <a href={nextLink} className="text-light text-decoration-none">Next Project</a>
-        </div>
+        <FadeInWhenVisible direction="bottom">
+          <div className="d-flex justify-content-between mt-5">
+            <a href={prevLink} className="text-light text-decoration-none">
+              Previous Project
+            </a>
+            <a href={nextLink} className="text-light text-decoration-none">
+              Next Project
+            </a>
+          </div>
+        </FadeInWhenVisible>
       </div>
+
       <Footer />
     </section>
   );

@@ -126,3 +126,26 @@ color:var(--red-alt) !important;
   background-color:var(--black-alt);
   border: 0px solid white;
 }
+
+.form-floating>textarea:focus~label::after, .form-floating>textarea:not(:placeholder-shown)~label::after {
+  background-color:transparent !important;
+}
+
+button.btn.btn-primary.learn-more-link.send-button {
+  font-weight:400;
+  border:1px solid var(--black-alt);
+}
+
+button.btn.btn-primary.learn-more-link.send-button:hover,
+button.btn.btn-primary.learn-more-link.send-button:active,
+button.btn.btn-primary.learn-more-link.send-button:focus {
+  color:var(--mustard);
+  background-color:var(--black-alt);
+  transition: .2s ease-in-out;
+  border:1px solid var(--black-alt);
+}
+
+button.btn.btn-primary.learn-more-link.send-button:hover{
+  border:1px solid var(--mustard);
+  transition: .3s ease-in-out;
+}

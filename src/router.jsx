@@ -13,7 +13,11 @@ export const router = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "about", element: <About /> },
      { path: "project/:id", element: <ProjectPage /> },
-     { path: "*", element: <NotFound /> },
+     {
+  path: "*",
+  element: <NotFound />,
+  handle: { pageClass: "not-found" },
+},
     ],
   },
 ]);

@@ -1,13 +1,13 @@
-import project1Image from "../assets/Eden-Church.webp";
-import project2Image from "../assets/VLCT.webp";
-import project3Image from "../assets/placeholder.png";
+import project1Image from "../assets/frontline.webp";
+import project2Image from "../assets/vlct.webp";
+import project3Image from "../assets/eden.webp";
 
 const projects = [
   {
     id: "project1",
-    title: "Eden Church",
+    title: "Frontline Education",
     image: project1Image,
-    summary: "Local church in Des Moines, Iowa.",
+    summary: "School District RMS for South Carolina",
     year: "2023",
     role: "UX Designer",
     platforms: "Web, Mobile",
@@ -39,9 +39,9 @@ const projects = [
   },
   {
     id: "project3",
-    title: "Final Project",
+    title: "Eden Church",
     image: project3Image,
-    summary: "Short description for card.",
+    summary: "Local church in Des Moines, Iowa.",
     year: "2024",
     role: "Product Designer",
     platforms: "iOS, Android",

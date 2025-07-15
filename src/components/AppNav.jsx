@@ -50,6 +50,11 @@ export default function AppNav() {
 
         <span className="text-light px-2">|</span>
 
+        <a href="./public/Patrick-Watertor-2025-Resume.pdf" target="_blank" className="nav-link text-light">
+          Resume
+        </a>
+        <span className="text-light px-2">|</span>
+
         <a
           href="https://www.linkedin.com/in/patrick-watertor/"
           target="_blank"
@@ -59,9 +64,6 @@ export default function AppNav() {
           <Linkedin />
         </a>
 
-        <a href="./public/Patrick-Watertor-2025-Resume.pdf" target="_blank" className="nav-link text-light">
-          Resume
-        </a>
       </div>
 
       <ContactModal show={showContact} onClose={() => setShowContact(false)} />

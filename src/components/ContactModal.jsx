@@ -1,5 +1,5 @@
 // src/components/ContactModal.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useForm, ValidationError } from "@formspree/react";
 import { ChevronRight } from "lucide-react";
@@ -21,7 +21,6 @@ export default function ContactModal({ show, onClose }) {
     }));
   };
 
-  // Handle form submit with honeypot check
   const onSubmit = async (e) => {
     e.preventDefault();
     if (formData.website.length > 0) {
@@ -29,10 +28,17 @@ export default function ContactModal({ show, onClose }) {
       return;
     }
     await handleSubmit(e);
-    if (state.succeeded) {
-      onClose();
-    }
   };
+
+  // Auto-close modal after 3 seconds if submission succeeded
+  useEffect(() => {
+    if (state.succeeded) {
+      const timer = setTimeout(() => {
+        onClose();
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded, onClose]);
 
   return (
     <div className="contact-modal-wrapper">
@@ -43,7 +49,9 @@ export default function ContactModal({ show, onClose }) {
 
         <Modal.Body>
           {state.succeeded ? (
-            <p className="thank-you-message">Thanks for reaching out! I’ll be in touch soon.</p>
+            <p className="thank-you-message">
+              Thanks for reaching out! I’ll be in touch soon.
+            </p>
           ) : (
             <Form onSubmit={onSubmit}>
               {/* Honeypot field (hidden from users) */}
@@ -111,7 +119,7 @@ export default function ContactModal({ show, onClose }) {
                 >
                   Send a Message<ChevronRight className="chevron-icon" />
                 </Button>
-                
+
                 <Button
                   variant="secondary"
                   onClick={onClose}

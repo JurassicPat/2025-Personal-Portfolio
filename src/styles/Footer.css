@@ -1,4 +1,12 @@
 /* src/styles/Footer.css */
+footer.site-footer {
+  position:absolute;
+  bottom:0;
+      left: 50%;
+    transform: translate(-50%, -50%);
+text-align:center;
+}
+
 
 .site-footer {
   background: transparent;
@@ -10,7 +18,7 @@
 }
 
 .site-footer small {
-  color:#fff;
+  color:var(--tag-line);
   font-weight: 400;
   letter-spacing: 0.03em;
 }
