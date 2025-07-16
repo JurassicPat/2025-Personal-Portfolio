@@ -5,9 +5,42 @@
     <link rel="icon" type="image/svg" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patrick Watertor | Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
   </head>
   <body style="background-color: #1a1a1a;">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+  window.addEventListener("load", function () {
+    window.cookieconsent.initialise({
+      palette: {
+        popup: { background: "#000" },
+        button: { background: "#ffb81c" },
+      },
+      theme: "classic",
+      position: "bottom",
+      type: "opt-in",
+      content: {
+        message: "This site uses cookies to enhance your experience.",
+        dismiss: "Allow",
+        deny: "Decline",
+        link: "Learn more",
+        href: "/privacy",
+      },
+      onInitialise: function (status) {
+        if (status === cookieconsent.status.allow) {
+          window.dispatchEvent(new Event("consent-granted"));
+        }
+      },
+      onStatusChange: function (status) {
+        if (status === cookieconsent.status.allow) {
+          window.dispatchEvent(new Event("consent-granted"));
+        }
+      },
+    });
+  });
+</script>
+
   </body>
 </html>

@@ -1,5 +1,6 @@
 // src/components/ProjectTemplate.jsx
 import React from "react";
+import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import FadeInWhenVisible from "./FadeInWhenVisible";
 
@@ -19,7 +20,14 @@ export default function ProjectTemplate({
   nextLink = "#",
 }) {
   return (
-    <section className="project-template">
+    <motion.section
+  className="project-template"
+  initial={{ opacity: 0, scale: 0.98 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0, scale: 0.98 }}
+  transition={{ duration: 0.4, ease: "easeInOut" }}
+>
+
       {/* Hero */}
       <div
         className="project-hero d-flex align-items-center"
@@ -110,6 +118,6 @@ export default function ProjectTemplate({
       </div>
 
       <Footer />
-    </section>
+    </motion.section>
   );
 }

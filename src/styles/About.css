@@ -3,7 +3,14 @@
 .about-page {
   background: #1a1a1a;
   color: var(--text-light);
-  position: relative;
+  position: relative; /* Needed for .vertical-line to anchor correctly */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page .lead {
+  margin-bottom: 0;
 }
 
 /* Hero Section */
@@ -27,6 +34,11 @@
 }
 
 /* Main Content */
+.about-body-section {
+  flex: 1; /* Ensures it can grow to fill space */
+  margin-bottom: 5rem;
+}
+
 .about-body-section h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -49,6 +61,38 @@
   margin-bottom: 0.5rem;
 }
 
+/* Icon links */
+.icon-link {
+  color: var(--accent) !important;
+  font-size: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-link:hover {
+  transform: scale(1.15);
+}
+
+.icon-link svg {
+  stroke-width: 1.8;
+}
+
+button.icon-link {
+  all: unset;
+  cursor: pointer;
+}
+
+.about-page h5 {
+  color: var(--accent);
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .about-page::before {
     left: 20px;

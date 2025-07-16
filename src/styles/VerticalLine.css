@@ -1,40 +1,25 @@
-/* src/styles/VerticalLine.css */
-
 .vertical-line {
-      position: absolute;
-    top: 0;
-    left: 0;
-    width: 25%;
-    height: 2650px;
-    z-index: 90;
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  z-index: 50;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .vertical-line img {
-  height: 100%;
   width: auto;
+  opacity: 0.25;
   object-fit: contain;
-  opacity: 0.25; /* adjust for visibility */
-  mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
-  position: relative;
+
+  mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
+  
 }
 
-.vertical-line img::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 20%;                 /* fade height */
-  background: linear-gradient(to bottom, transparent 0%, #1a1a1a 100%);
-  pointer-events: none;
-}
-
-/* Hide on small screens if desired */
 @media (max-width: 768px) {
   .vertical-line {
     display: none;

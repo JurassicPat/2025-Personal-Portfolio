@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useForm, ValidationError } from "@formspree/react";
 import { ChevronRight } from "lucide-react";
+import { logEvent } from "../utils/analytics";
 
 export default function ContactModal({ show, onClose }) {
   const [formData, setFormData] = useState({
@@ -30,9 +31,11 @@ export default function ContactModal({ show, onClose }) {
     await handleSubmit(e);
   };
 
-  // Auto-close modal after 3 seconds if submission succeeded
+  // Auto-close modal after 3 seconds if submission succeeded, and log event
   useEffect(() => {
     if (state.succeeded) {
+      logEvent("Form Submitted", "Contact Modal", "Contact form submission succeeded");
+
       const timer = setTimeout(() => {
         onClose();
       }, 3000);

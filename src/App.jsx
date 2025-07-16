@@ -1,22 +1,41 @@
-import React, { useEffect } from "react";
+// src/App.jsx
+import React, { useEffect, useState } from "react";
 import { Outlet, useLocation, useMatches } from "react-router-dom";
 import AppNav from "./components/AppNav";
 import BackToTop from "./components/BackToTop";
-import { AnimatePresence, motion } from "framer-motion";
 import VerticalLine from "./components/VerticalLine";
+import ConsentBanner from "./components/ConsentBanner";
+import { initGA, logPageView, isInitialized } from "./utils/analytics";
 
 export default function App() {
   const location = useLocation();
   const matches = useMatches();
+  const [hasConsent, setHasConsent] = useState(false);
 
+  // On first load, check if consent was previously given
   useEffect(() => {
-    // Check if the deepest matched route has a handle with pageClass
+    const consent = localStorage.getItem("cookieConsent");
+    if (consent === "true") {
+      initGA();
+      setHasConsent(true);
+      logPageView(location.pathname + location.search);
+    }
+  }, []);
+
+  // Log pageview only if GA has been initialized
+  useEffect(() => {
+    if (hasConsent && isInitialized()) {
+      logPageView(location.pathname + location.search);
+    }
+  }, [location, hasConsent]);
+
+  // Add page-level body class (unchanged from your version)
+  useEffect(() => {
     const match = matches[matches.length - 1];
     const pageClass =
       match?.handle?.pageClass ||
       (location.pathname === "/" ? "home" : location.pathname.slice(1).replaceAll("/", "-"));
 
-    // Clear existing page classes
     document.body.classList.forEach((cls) => {
       if (cls.endsWith("-page")) document.body.classList.remove(cls);
     });
@@ -28,24 +47,22 @@ export default function App() {
     };
   }, [location, matches]);
 
+  const handleConsentAccept = () => {
+    localStorage.setItem("cookieConsent", "true");
+    initGA();
+    setHasConsent(true);
+    logPageView(location.pathname + location.search);
+  };
+
   return (
     <>
       <VerticalLine />
       <AppNav />
       <div className="app-wrapper">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={location.pathname}
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-        >
-          <Outlet />
-          <BackToTop />
-        </motion.div>
-      </AnimatePresence>
+        <Outlet />
+        <BackToTop />
       </div>
+      <ConsentBanner onAccept={handleConsentAccept} />
     </>
   );
 }

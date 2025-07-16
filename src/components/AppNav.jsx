@@ -50,7 +50,7 @@ export default function AppNav() {
 
         <span className="text-light px-2">|</span>
 
-        <a href="./public/Patrick-Watertor-2025-Resume.pdf" target="_blank" className="nav-link text-light">
+        <a href="/Patrick-Watertor-2025-Resume.pdf" target="_blank" onClick={() => logEvent("Download", "Resume", "Navbar Link")} className="nav-link text-light">
           Resume
         </a>
         <span className="text-light px-2">|</span>
@@ -59,6 +59,7 @@ export default function AppNav() {
           href="https://www.linkedin.com/in/patrick-watertor/"
           target="_blank"
           rel="noreferrer"
+          onClick={() => logEvent("External Click", "LinkedIn")}
           className="nav-link text-light"
         >
           <Linkedin />

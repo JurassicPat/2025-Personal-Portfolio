@@ -1,5 +1,6 @@
 // src/pages/About.jsx
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import { Gem, Github, Linkedin, Send } from "lucide-react";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
@@ -12,14 +13,20 @@ export default function About() {
   const [showContact, setShowContact] = useState(false);
 
   return (
-    <main className="about-page text-light">
+    <motion.main
+    className="about-page text-light"
+    initial={{ opacity: 0, scale: 0.98 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.98 }}
+    transition={{ duration: 0.4, ease: "easeInOut" }}
+  >
       <section className="about-hero-section d-flex align-items-center min-vh-100">
         <div className="container">
           <FadeInWhenVisible>
             <div className="row align-items-center">
               <div className="col-md-8 offset-md-2">
-                <p className="lead">Just a little</p>
-                <h1 className="display-4 fw-bold">About Me</h1>
+                <p className="lead">About Me</p>
+                <h1 className="display-4 fw-bold">Who’s Behind the Pixels?</h1>
                 <p className="tagline">
                   Based in the Midwest, I’m a designer and developer who blends
                   visual creativity with front-end skill. I focus on crafting
@@ -37,7 +44,7 @@ export default function About() {
           <div className="row mb-5">
             <div className="col-md-8 offset-md-3">
               <h2 className="fw-bold" aria-label="About me section">
-                About Me
+                A Bit About Me
               </h2>
               <p>
                 Hello, I’m Patrick — a UI/UX designer and front-end developer
@@ -95,61 +102,63 @@ export default function About() {
         <FadeInWhenVisible direction="bottom">
           <div className="row mb-5">
             <div className="col-md-8 offset-md-3">
-              <h5 className="fw-bold text-center">
+              <h3 className="fw-bold">
                 Companies I’ve Designed For
-              </h5>
+              </h3>
               <LogoCarousel />
             </div>
           </div>
         </FadeInWhenVisible>
 
         <FadeInWhenVisible direction="right">
-          <div className="row">
+          <div className="row latest-links">
             <div className="col-md-8 offset-md-3">
-              <h2 className="fw-bold" aria-label="Contact and links section">
+              <h3 className="fw-bold" aria-label="Contact and links section">
                 Get the latest
-              </h2>
+              </h3>
               <p>Looking for latest updates or wondering what I'm up to?</p>
             </div>
             <div className="col-md-2 offset-md-3">
-              <p>
-                <a
-                  href="https://github.com/JurassicPat"
-                  className="learn-more-link"
-                >
-                  <Github /> Github
-                </a>
-              </p>
+              <a
+                href="https://github.com/JurassicPat"
+                className="icon-link"
+                title="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github />
+              </a>
             </div>
             <div className="col-md-2">
-              <p>
-                <a
-                  href="https://linkedin.com/in/patrick-watertor"
-                  className="learn-more-link"
-                >
-                  <Linkedin /> LinkedIn
-                </a>
-              </p>
+              <a
+                href="https://linkedin.com/in/patrick-watertor"
+                className="icon-link"
+                title="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin />
+              </a>
             </div>
             <div className="col-md-2">
-              <p>
-                <a
-                  href="https://moxfield.com/users/JurassicPat"
-                  className="learn-more-link"
-                >
-                  <Gem /> Moxfield
-                </a>
-              </p>
+              <a
+                href="https://moxfield.com/users/JurassicPat"
+                className="icon-link"
+                title="Moxfield"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Gem />
+              </a>
             </div>
             <div className="col-md-2">
-              <p>
-                <a
-                  className="learn-more-link chevron-link"
-                  onClick={() => setShowContact(true)}
-                >
-                  <Send /> Contact
-                </a>
-              </p>
+              <button
+                className="icon-link"
+                title="Contact"
+                onClick={() => setShowContact(true)}
+              >
+                <Send />
+              </button>
             </div>
           </div>
         </FadeInWhenVisible>
@@ -157,8 +166,8 @@ export default function About() {
           show={showContact}
           onClose={() => setShowContact(false)}
         />
-        <Footer />
       </section>
-    </main>
+      <Footer className="about-footer-wrapper" />
+    </motion.main>
   );
 }
