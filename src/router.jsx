@@ -3,7 +3,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import ProjectPage from "./pages/ProjectPage";
-import NotFound from "./pages/NotFound"; // ← Import it
+import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
   {

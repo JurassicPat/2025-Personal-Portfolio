@@ -1,11 +1,9 @@
 /* src/styles/Footer.css */
 
 footer.site-footer {
-  position:absolute;
-  bottom:0;
-      left: 50%;
-    transform: translate(-50%, -50%);
+  background-color: transparent;
 text-align:center;
+margin-top: 3rem;
 }
 
 
@@ -22,4 +20,13 @@ text-align:center;
   color:var(--tag-line);
   font-weight: 400;
   letter-spacing: 0.03em;
+}
+
+/* src/styles/Footer.css or wherever */
+footer.homepage-footer {
+  background: transparent;
+  color: var(--text-light);
+  padding-top: 2rem;
+  position: relative;
+  z-index: 2;
 }

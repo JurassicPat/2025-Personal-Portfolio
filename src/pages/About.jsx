@@ -24,7 +24,7 @@ export default function About() {
         <div className="container">
           <FadeInWhenVisible>
             <div className="row align-items-center">
-              <div className="col-md-8 offset-md-2">
+              <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
                 <p className="lead">About Me</p>
                 <h1 className="display-4 fw-bold">Who’s Behind the Pixels?</h1>
                 <p className="tagline">
@@ -42,7 +42,8 @@ export default function About() {
       <section className="about-body-section container py-5">
         <FadeInWhenVisible>
           <div className="row mb-5">
-            <div className="col-md-8 offset-md-3">
+            <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+
               <h2 className="fw-bold" aria-label="About me section">
                 A Bit About Me
               </h2>
@@ -101,7 +102,8 @@ export default function About() {
 
         <FadeInWhenVisible direction="bottom">
           <div className="row mb-5">
-            <div className="col-md-8 offset-md-3">
+            <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+
               <h3 className="fw-bold">
                 Companies I’ve Designed For
               </h3>
@@ -112,7 +114,8 @@ export default function About() {
 
         <FadeInWhenVisible direction="right">
           <div className="row latest-links">
-            <div className="col-md-8 offset-md-3">
+            <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+
               <h3 className="fw-bold" aria-label="Contact and links section">
                 Get the latest
               </h3>
@@ -120,45 +123,49 @@ export default function About() {
             </div>
             <div className="col-md-2 offset-md-3">
               <a
-                href="https://github.com/JurassicPat"
-                className="icon-link"
-                title="GitHub"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github />
-              </a>
+  href="https://github.com/JurassicPat"
+  className="icon-link"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="GitHub"
+>
+  <Github />
+  <span className="tooltip-text">GitHub</span>
+</a>
             </div>
             <div className="col-md-2">
               <a
-                href="https://linkedin.com/in/patrick-watertor"
-                className="icon-link"
-                title="LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin />
-              </a>
+  href="https://linkedin.com/in/patrick-watertor"
+  className="icon-link"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="LinkedIn"
+>
+  <Linkedin />
+  <span className="tooltip-text">LinkedIn</span>
+</a>
             </div>
             <div className="col-md-2">
               <a
-                href="https://moxfield.com/users/JurassicPat"
-                className="icon-link"
-                title="Moxfield"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Gem />
-              </a>
+  href="https://moxfield.com/users/JurassicPat"
+  className="icon-link"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Moxfield"
+>
+  <Gem />
+  <span className="tooltip-text">Moxfield</span>
+</a>
             </div>
             <div className="col-md-2">
               <button
-                className="icon-link"
-                title="Contact"
-                onClick={() => setShowContact(true)}
-              >
-                <Send />
-              </button>
+  className="icon-link"
+  onClick={() => setShowContact(true)}
+  aria-label="Contact"
+>
+  <Send />
+  <span className="tooltip-text">Contact</span>
+</button>
             </div>
           </div>
         </FadeInWhenVisible>
@@ -167,7 +174,6 @@ export default function About() {
           onClose={() => setShowContact(false)}
         />
       </section>
-      <Footer className="about-footer-wrapper" />
     </motion.main>
   );
 }

@@ -35,3 +35,72 @@
 .home-page .project-image {
   max-width: 600px;
 }
+
+.project-template a,
+a.learn-more-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease-in-out;
+  text-decoration: none;
+  color:var(--mustard);
+      line-height: 1;
+}
+
+.project-template svg.lucide.lucide-chevron-right {
+    height: 20px;
+}
+
+.project-template a:hover,
+.project-template a:focus,
+.project-template a:active {
+  opacity: 0.8;
+  color:var(--mustard);
+}
+
+.chevron-link:hover .chevron-icon {
+  animation: wiggle 0.6s ease-in-out;
+}
+
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(3px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes wiggle-left {
+  0% { transform: rotate(180deg) translateX(0); }
+  25% { transform: rotate(180deg) translateX(-3px); }
+  50% { transform: rotate(180deg) translateX(0); }
+  75% { transform: rotate(180deg) translateX(-3px); }
+  100% { transform: rotate(180deg) translateX(0); }
+}
+
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+.learn-more-link:hover .chevron-icon {
+  animation: wiggle 0.6s ease-in-out;
+}
+
+a.learn-more-link {
+    margin-bottom: 5rem;
+}
+
+.chevron-left-icon {
+  transition: transform 0.3s ease;
+}
+
+.chevron-link:hover .chevron-left-icon,
+.learn-more-link:hover .chevron-left-icon {
+  animation: wiggle-left 0.6s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  a.learn-more-link {
+    margin-bottom: 0; /* or 0 if you prefer */
+  }
+}

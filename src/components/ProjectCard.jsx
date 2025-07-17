@@ -1,3 +1,4 @@
+// src/components/ProjectCard.jsx
 import React from "react";
 import projects from "../data/projects";
 import { ChevronRight } from "lucide-react";
@@ -9,10 +10,11 @@ export default function ProjectCardsSection() {
       <div className="container-fluid">
         {projects.map((project, index) => (
           <FadeInWhenVisible key={project.id} delay={index * 0.2}>
-            <div className="row align-items-center mb-5">
+            <div className="row align-items-center mb-5 gx-4 gy-4">
               {index === 1 ? (
                 <>
-                  <div className="col-md-6 offset-md-1 text-center">
+                  {/* Image left on desktop, top on mobile */}
+                  <div className="col-12 col-lg-6 text-center order-1 order-lg-0">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -20,7 +22,8 @@ export default function ProjectCardsSection() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="col-md-4 offset-md-1 project-content text-light d-flex flex-column">
+
+                  <div className="col-12 col-lg-5 offset-lg-1 project-content text-light d-flex flex-column text-lg-start text-center order-0 order-lg-1">
                     <div className="project-number">
                       {String(index + 1).padStart(2, "0")}
                     </div>
@@ -28,7 +31,7 @@ export default function ProjectCardsSection() {
                     <p className="tagline">{project.summary}</p>
                     <a
                       href={`/project/${project.id}`}
-                      className="ps-0 chevron-link"
+                      className="chevron-link d-inline-flex align-items-center gap-2 justify-content-lg-start justify-content-center"
                     >
                       View Project <ChevronRight className="chevron-icon" />
                     </a>
@@ -36,7 +39,16 @@ export default function ProjectCardsSection() {
                 </>
               ) : (
                 <>
-                  <div className="col-md-3 offset-md-3 project-content text-light d-flex flex-column">
+                  {/* Image right on desktop, top on mobile */}
+                  <div className="col-12 col-lg-6 text-center order-1 order-lg-1">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="project-image"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="col-12 col-lg-4 offset-lg-2 project-content text-light d-flex flex-column text-lg-start text-center order-0 order-lg-0">
                     <div className="project-number">
                       {String(index + 1).padStart(2, "0")}
                     </div>
@@ -44,18 +56,10 @@ export default function ProjectCardsSection() {
                     <p className="tagline">{project.summary}</p>
                     <a
                       href={`/project/${project.id}`}
-                      className="chevron-link"
+                      className="chevron-link d-inline-flex align-items-center gap-2 justify-content-lg-start justify-content-center"
                     >
                       View Project <ChevronRight className="chevron-icon" />
                     </a>
-                  </div>
-                  <div className="col-md-6 text-center">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="project-image"
-                      loading="lazy"
-                    />
                   </div>
                 </>
               )}

@@ -19,9 +19,9 @@ export default function HeroSection() {
   return (
     <section className="hero-section d-flex align-items-center min-vh-100">
       <div className="container">
-        <div className="row align-items-center">
-          {/* Left Side */}
-          <div className="col-md-4 offset-md-2">
+        <div className="row align-items-center text-md-start">
+          {/* Text Column */}
+          <div className="col-md-4 offset-md-2 mb-4 mb-md-0">
             <p className="lead">
               <AnimatePresence mode="wait">
                 <motion.span
@@ -37,16 +37,17 @@ export default function HeroSection() {
               </AnimatePresence>{" "}
               I’m
             </p>
-
             <h1 className="display-4 fw-bold">Patrick</h1>
             <p className="mb-4 tagline">
               Solving complex problems with creative UX, clean design, and front-end code.
             </p>
-            <a href="/about" className="learn-more-link">
+            <a href="/about" className="learn-more-link d-inline-flex align-items-center gap-2">
               Learn More About Me <ChevronRight className="chevron-icon" />
             </a>
           </div>
-          <div className="col-md-5 d-flex flex-row-reverse">
+
+          {/* Image Column */}
+          <div className="col-md-5 d-flex justify-content-center justify-content-md-end">
             <img
               src={profile}
               alt="Patrick smiling outdoors"

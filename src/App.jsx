@@ -3,9 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Outlet, useLocation, useMatches } from "react-router-dom";
 import AppNav from "./components/AppNav";
 import BackToTop from "./components/BackToTop";
+import Footer from "./components/Footer";
 import VerticalLine from "./components/VerticalLine";
 import ConsentBanner from "./components/ConsentBanner";
 import { initGA, logPageView, isInitialized } from "./utils/analytics";
+import ScrollToTop from "./components/ScrollToTop";
+import MobileNav from "./components/MobileNav";
+
 
 export default function App() {
   const location = useLocation();
@@ -56,10 +60,17 @@ export default function App() {
 
   return (
     <>
+     <ScrollToTop />
       <VerticalLine />
+      <div className="desktop-nav-wrapper">
       <AppNav />
+      </div>
+       <div className="mobile-nav-wrapper">
+        <MobileNav />
+      </div>
       <div className="app-wrapper">
         <Outlet />
+        {location.pathname !== "/" && <Footer />}
         <BackToTop />
       </div>
       <ConsentBanner onAccept={handleConsentAccept} />

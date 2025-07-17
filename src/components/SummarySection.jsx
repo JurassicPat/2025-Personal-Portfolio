@@ -25,7 +25,7 @@ export default function SummarySection() {
                 className="learn-more-link chevron-link"
                 onClick={() => setShowContact(true)}
               >
-                Get in Touch <ChevronRight className="chevron-icon" />
+                Get in Touch<ChevronRight className="chevron-icon" />
               </a>
             </div>
           </div>

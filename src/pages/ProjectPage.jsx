@@ -31,9 +31,11 @@ export default function ProjectPage() {
 
   return (
     <ProjectTemplate
-      heroImage={project.image}
-      title="Patrick"
-      subtitle="UX is a journey and I’m your guide"
+      heroImage={project.hero}
+      image={project.image}
+      website={project.website}
+      title={project.title}
+      subtitle={project.summary}
       overview={project.overview}
       role={project.role}
       platforms={project.platforms}
@@ -42,8 +44,8 @@ export default function ProjectPage() {
       opportunity={project.opportunity}
       process={project.process}
       results={project.results}
-      prevLink={`/project/${prev.id}`}
-      nextLink={`/project/${next.id}`}
+      prevLink={{ href: `/project/${prev.id}`, title: prev.title }}
+      nextLink={{ href: `/project/${next.id}`, title: next.title }}
     />
   );
 }
