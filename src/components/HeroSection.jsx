@@ -1,7 +1,7 @@
 // src/components/HeroSection.jsx
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import profile from "../assets/patrick.png";
+//import profile from "../assets/patrick.png";
 import { ChevronRight } from "lucide-react";
 
 const greetings = ["Hello!", "Hey!", "Howdy!", "Hi!"];
@@ -45,16 +45,6 @@ export default function HeroSection() {
               Learn More About Me <ChevronRight className="chevron-icon" />
             </a>
           </div>
-
-{/*
-          <div className="col-md-5 d-flex justify-content-center justify-content-md-end">
-            <img
-              src={profile}
-              alt="Patrick smiling outdoors"
-              className="hero-profile-img rounded-circle img-fluid"
-            />
-          </div>
-        </div> */}
       </div>
     </section>
   );
