@@ -46,7 +46,7 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Image Column */}
+{/*
           <div className="col-md-5 d-flex justify-content-center justify-content-md-end">
             <img
               src={profile}
@@ -54,7 +54,7 @@ export default function HeroSection() {
               className="hero-profile-img rounded-circle img-fluid"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
