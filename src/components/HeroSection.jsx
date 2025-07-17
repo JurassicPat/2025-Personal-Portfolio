@@ -1,7 +1,7 @@
 // src/components/HeroSection.jsx
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import profile from "../assets/patrick.png";
+import profile from "../assets/patrick.webp";
 import { ChevronRight } from "lucide-react";
 
 const greetings = ["Hello!", "Hey!", "Howdy!", "Hi!"];
