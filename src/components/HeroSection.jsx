@@ -46,6 +46,13 @@ export default function HeroSection() {
             </a>
           </div>
 
+          <div className="col-md-5 d-flex justify-content-center justify-content-md-end">
+            <img
+              src={profile}
+              alt="Patrick smiling outdoors"
+              className="hero-profile-img rounded-circle img-fluid"
+            />
+          </div>
         </div>
       </div>
     </section>
