@@ -16,7 +16,7 @@ export default function App() {
   const matches = useMatches();
   const [hasConsent, setHasConsent] = useState(false);
 
-  // On first load, check if consent was previously given
+  // Load consent from localStorage
   useEffect(() => {
     const consent = localStorage.getItem("cookieConsent");
     if (consent === "true") {
@@ -26,14 +26,14 @@ export default function App() {
     }
   }, []);
 
-  // Log pageview only if GA has been initialized
+  // Log pageviews when route changes
   useEffect(() => {
     if (hasConsent && isInitialized()) {
       logPageView(location.pathname + location.search);
     }
   }, [location, hasConsent]);
 
-  // Add page-level body class (unchanged from your version)
+  // Add body class based on page
   useEffect(() => {
     const match = matches[matches.length - 1];
     const pageClass =
