@@ -11,20 +11,17 @@ export const initGA = () => {
       },
     });
     initialized = true;
-    console.log("✅ Google Analytics Initialized");
   }
 };
 
 export const logPageView = (path) => {
   if (!initialized) return;
-  console.log("📊 Logging pageview:", path);
-  ReactGA.send({ hitType: "pageview", page: path, debug_mode: true });
+  ReactGA.send({ hitType: "pageview", page: path });
 };
 
 export const logEvent = (eventName, params = {}) => {
   if (!initialized) return;
-  console.log("🎯 Logging event:", eventName, params);
-  ReactGA.event(eventName, { ...params, debug_mode: true });
+  ReactGA.event(eventName, params);
 };
 
 export const isInitialized = () => initialized;
