@@ -5,7 +5,6 @@ import AppNav from "./components/AppNav";
 import BackToTop from "./components/BackToTop";
 import Footer from "./components/Footer";
 import VerticalLine from "./components/VerticalLine";
-import ConsentBanner from "./components/ConsentBanner";
 import { initGA, logPageView, isInitialized } from "./utils/analytics";
 import ScrollToTop from "./components/ScrollToTop";
 import MobileNav from "./components/MobileNav";
@@ -70,7 +69,6 @@ export default function App() {
         {location.pathname !== "/" && <Footer />}
         <BackToTop />
       </div>
-      <ConsentBanner onAccept={handleConsentAccept} />
     </>
   );
 }
