@@ -2,19 +2,27 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import compression from 'vite-plugin-compression';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      babel: {
+        // Disable default .babelrc and babel.config.js usage
+        babelrc: false,
+        configFile: false,
+        // Optional: pass a custom target to avoid legacy transpiling
+        presets: [],
+        plugins: [],
+      },
+    }),
 
-    // Gzip compression (.gz)
+    // Gzip compression
     compression({
       algorithm: 'gzip',
       ext: '.gz',
-      threshold: 10240, // Only compress files larger than 10kb
+      threshold: 10240,
     }),
 
-    // Brotli compression (.br)
+    // Brotli compression
     compression({
       algorithm: 'brotliCompress',
       ext: '.br',
@@ -22,6 +30,7 @@ export default defineConfig({
     }),
   ],
   build: {
-    assetsInlineLimit: 0, // Don't inline assets, useful for caching and compression
+    target: 'es2020', // Target modern browsers only
+    assetsInlineLimit: 0,
   },
 });
