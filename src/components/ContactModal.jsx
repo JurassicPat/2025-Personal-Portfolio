@@ -4,8 +4,13 @@ import { Modal, Button, Form } from "react-bootstrap";
 import { useForm, ValidationError } from "@formspree/react";
 import { ChevronRight } from "lucide-react";
 import { logEvent } from "../utils/analytics";
+import useScrollbarCompensation from "./useScrollbarCompensation";
+import "../styles/ContactModal.css";
+
 
 export default function ContactModal({ show, onClose }) {
+ useScrollbarCompensation(show);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",

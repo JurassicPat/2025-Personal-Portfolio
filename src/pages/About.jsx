@@ -6,6 +6,7 @@ import { Gem, Github, Linkedin, Send } from "lucide-react";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import LogoCarousel from "../components/LogoCarousel";
 import SkillsToolsTech from "../components/SkillsToolsTech";
+import '../styles/About.css';
 
 import ContactModal from "../components/ContactModal";
 

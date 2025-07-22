@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import HeroSection from "../components/HeroSection";
 import ProjectCard from "../components/ProjectCard";
 import SummarySection from "../components/SummarySection";
-
 import Footer from "../components/Footer";
 
 export default function Home() {

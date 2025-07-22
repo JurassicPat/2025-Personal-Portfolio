@@ -1,7 +1,6 @@
 // src/pages/NotFound.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import { ChevronRight } from "lucide-react";
 
 export default function NotFound() {
@@ -14,7 +13,6 @@ export default function NotFound() {
           Back to Home <ChevronRight className="chevron-icon" />
         </a>
       </div>
-      <Footer />
     </main>
   );
 }

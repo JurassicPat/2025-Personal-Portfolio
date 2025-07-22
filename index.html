@@ -15,6 +15,13 @@
 
     <!-- CookieConsent v3 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <!-- Critical (loads immediately) -->
+<link rel="stylesheet" href="/src/styles/critical.css" />
+
+<!-- Non-critical (loads after) -->
+<link rel="preload" href="/src/styles/NonCritical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/src/styles/nonCritical.css"></noscript>
+
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
   </head>
   <body style="background-color: #1a1a1a">

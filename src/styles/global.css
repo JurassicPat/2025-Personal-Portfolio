@@ -13,10 +13,9 @@
 @import "./Footer.css";
 @import "./VerticalLine.css";
 @import "./MobileNav.css";
+@import "./ContactModal.css";
 
 /* Page-specific styles */
-@import "./About.css";
-@import "./ContactModal.css";
 @import "./HeroSection.css";
 @import "./NotFound.css";
 @import "./ProjectCard.css";

@@ -1,59 +1,114 @@
 // src/pages/Privacy.jsx
-import React from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
+import FadeInWhenVisible from "../components/FadeInWhenVisible";
+import ContactModal from "../components/ContactModal";
+
+import { ChevronRight } from "lucide-react";
 
 export default function Privacy() {
+  const [showContact, setShowContact] = useState(false);
+
   return (
-    <main style={{ padding: "2rem", maxWidth: "800px", margin: "auto", color: "#fff" }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Privacy Policy</h1>
-      <p>Last updated: July 21, 2025</p>
-
-      <section>
-        <h2>1. Introduction</h2>
-        <p>
-          This website (patrickwatertor.com) is a personal portfolio created by Patrick Watertor.
-          I value your privacy and am committed to protecting your personal data.
-        </p>
+    <motion.main
+      className="privacy-page text-light"
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+    >
+      <section className="privacy-hero-section d-flex align-items-center min-vh-100">
+        <div className="container">
+          <FadeInWhenVisible>
+            <div className="row align-items-center">
+              <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                <p className="lead">Privacy Policy</p>
+                <h1 className="display-4 fw-bold">Your Data, Your Choice</h1>
+                <p className="tagline">
+                  Transparency matters. Here's how your information is handled on this site.
+                </p>
+              </div>
+            </div>
+          </FadeInWhenVisible>
+        </div>
       </section>
 
-      <section>
-        <h2>2. Data Collected</h2>
-        <p>
-          I use Google Analytics to understand how visitors interact with this site. No personally identifiable
-          information is collected unless explicitly provided by you (e.g., through a contact form).
-        </p>
-      </section>
+      <section className="privacy-body-section container py-5">
+        <FadeInWhenVisible>
+          <div className="row mb-5">
+            <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+              <h2 className="fw-bold">1. Introduction</h2>
+              <p>
+                This site (patrickwatertor.com) is a personal portfolio created and maintained by Patrick Watertor. This Privacy Policy outlines what data is collected, how it's used, and how you can control it.
+              </p>
 
-      <section>
-        <h2>3. Cookies</h2>
-        <p>
-          This site uses cookies to enhance functionality and performance. You can choose to accept or decline
-          tracking cookies through the consent banner. Essential cookies may still be used for site operation.
-        </p>
-      </section>
+              <h2 className="fw-bold mt-5">2. What We Collect</h2>
+              <p>
+                This website uses Google Analytics to collect non-identifying, aggregated data such as:
+              </p>
+              <ul>
+                <li>Pages visited</li>
+                <li>Time spent on site</li>
+                <li>Device/browser type</li>
+                <li>Referral sources</li>
+              </ul>
+              <p>
+                No personally identifiable information is collected unless you explicitly provide it via a contact form.
+              </p>
 
-      <section>
-        <h2>4. Third-Party Services</h2>
-        <ul>
-          <li>Google Analytics 4 (anonymized IP and consent-based tracking)</li>
-          <li>Formspree (for contact form submission)</li>
-        </ul>
-      </section>
+              <h2 className="fw-bold mt-5">3. Cookies & Consent</h2>
+              <p>
+                Cookies are used solely to enhance your experience and track anonymized usage statistics. You can accept or decline cookies upon visiting the site. Your choice is saved locally in your browser.
+              </p>
 
-      <section>
-        <h2>5. Data Retention</h2>
-        <p>
-          Any analytics data is anonymized and stored by Google according to their retention policy. I do not
-          store or sell user data directly.
-        </p>
-      </section>
+              <h2 className="fw-bold mt-5">4. Contact Form Data</h2>
+              <p>
+                If you send a message through the contact form, the name, email, and message content you provide are used only to respond to your inquiry. This data is not shared, sold, or stored for marketing.
+              </p>
 
-      <section>
-        <h2>6. Contact</h2>
-        <p>
-          If you have any questions or concerns about this policy, feel free to contact me through the contact
-          form on this website.
-        </p>
+              <h2 className="fw-bold mt-5">5. Third-Party Services</h2>
+              <p>
+                The following tools are used:
+              </p>
+              <ul>
+                <li>
+                  <strong>Google Analytics</strong> — tracks site usage anonymously (IP anonymization is enabled).
+                </li>
+                <li>
+                  <strong>Formspree</strong> — processes contact form submissions securely.
+                </li>
+              </ul>
+
+              <h2 className="fw-bold mt-5">6. Your Rights</h2>
+              <p>
+                You have the right to:
+              </p>
+              <ul>
+                <li>Withdraw cookie consent at any time</li>
+                <li>Request deletion of any personal data you’ve shared</li>
+                <li>Contact me regarding privacy concerns</li>
+              </ul>
+
+              <h2 className="fw-bold mt-5">7. Contact</h2>
+              <p>
+                For privacy-related questions, please reach out.
+              </p>
+               <a
+                className="learn-more-link chevron-link"
+                onClick={() => setShowContact(true)}
+              >
+                Reach Out to Me<ChevronRight className="chevron-icon" />
+              </a>
+            </div>
+          </div>
+        </FadeInWhenVisible>
+
+        <ContactModal
+          show={showContact}
+          onClose={() => setShowContact(false)}
+        />
       </section>
-    </main>
+    </motion.main>
   );
 }
