@@ -1,9 +1,9 @@
 // src/pages/ProjectPage.jsx
 import React, { useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import projects from "../data/projects";
 import ProjectTemplate from "../components/ProjectTemplate";
-import Footer from "../components/Footer";
 
 export default function ProjectPage() {
   const { id } = useParams();
