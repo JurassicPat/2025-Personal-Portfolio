@@ -5,4 +5,8 @@
 @import "./ContactModal.css";
 @import "./NotFound.css";
 @import "./ProjectTemplate.css";
+@import "./ProjectCard.css";
+@import "./SummarySection.css";
+@import "./Footer.css";
+
 @import "../App.css";
