@@ -1,6 +1,7 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 /* Only the essentials for the Home page (above-the-fold) */
+@import "./fonts.css";
 @import "./variables.css";
 @import "./AppNav.css";
 @import "./HeroSection.css";
