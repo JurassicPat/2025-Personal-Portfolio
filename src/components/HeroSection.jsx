@@ -51,6 +51,7 @@ export default function HeroSection() {
               src={profile}
               alt="Patrick smiling outdoors"
               className="hero-profile-img rounded-circle img-fluid"
+              fetchpriority="high"
             />
           </div>
         </div>
