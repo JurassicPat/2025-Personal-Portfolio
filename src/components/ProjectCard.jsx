@@ -30,7 +30,7 @@ export default function ProjectCardsSection() {
                     <h3>{project.title}</h3>
                     <p className="tagline">{project.summary}</p>
                     <a
-                      href={`/project/${project.id}`}
+                      href={`/project/${project.slug}`}
                       className="chevron-link d-inline-flex align-items-center gap-2 justify-content-lg-start justify-content-center"
                     >
                       View Project <ChevronRight className="chevron-icon" />
@@ -55,7 +55,7 @@ export default function ProjectCardsSection() {
                     <h3>{project.title}</h3>
                     <p className="tagline">{project.summary}</p>
                     <a
-                      href={`/project/${project.id}`}
+                      href={`/project/${project.slug}`}
                       className="chevron-link d-inline-flex align-items-center gap-2 justify-content-lg-start justify-content-center"
                     >
                       View Project <ChevronRight className="chevron-icon" />

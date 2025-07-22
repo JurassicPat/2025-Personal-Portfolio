@@ -43,18 +43,25 @@ export default function ProjectTemplate({
         <div className="container text-light">
           <div className="row align-items-center">
             {/* Title and Subtitle */}
-           <div className="col-md-7">
-  <a
-    href="/"
-    className="learn-more-link"
-    aria-label="Back to homepage"
-  >
-    <ChevronRight className="chevron-left-icon" style={{ transform: "rotate(180deg)" }} />Back to Home
-  </a>
+            <div className="col-md-7">
+              <a
+                href="/"
+                className="learn-more-link"
+                aria-label="Back to homepage"
+              >
+                <ChevronRight
+                  className="chevron-left-icon"
+                  style={{ transform: "rotate(180deg)" }}
+                />
+                Back to Home
+              </a>
 
-  <h1 className="display-4 fw-bold" aria-label={`Project by ${title}`}>
-    {title}
-  </h1>
+              <h1
+                className="display-4 fw-bold"
+                aria-label={`Project by ${title}`}
+              >
+                {title}
+              </h1>
 
               <p>{subtitle}</p>
               {website && (
@@ -144,43 +151,43 @@ export default function ProjectTemplate({
           </div>
         </FadeInWhenVisible>
 
-       {/* Pagination Links */}
-<FadeInWhenVisible direction="bottom">
-  <div className="d-flex justify-content-between mt-5">
-   {/* Previous Project */}
-{prevLink && (
-  <a
-    href={prevLink.href}
-    className="chevron-link text-decoration-none d-flex align-items-center gap-2"
-    aria-label={`Previous project: ${prevLink.title}`}
-  >
-    <ChevronRight className="chevron-left-icon" style={{ transform: "rotate(180deg)" }} />
-    <div>
-      <div className="">Previous Project</div>
-      <div className="fw-semibold">{prevLink.title}</div>
-    </div>
-  </a>
-)}
+        {/* Pagination Links */}
+        <FadeInWhenVisible direction="bottom">
+          <div className="d-flex justify-content-between mt-5">
+            {/* Previous Project */}
+            {prevLink && (
+              <a
+                href={prevLink.href}
+                className="chevron-link text-decoration-none d-flex align-items-center gap-2"
+                aria-label={`Previous project: ${prevLink.title}`}
+              >
+                <ChevronRight
+                  className="chevron-left-icon"
+                  style={{ transform: "rotate(180deg)" }}
+                />
+                <div>
+                  <div className="">Previous Project</div>
+                  <div className="fw-semibold">{prevLink.title}</div>
+                </div>
+              </a>
+            )}
 
-{/* Next Project */}
-{nextLink && (
-  <a
-    href={nextLink.href}
-    className="chevron-link text-decoration-none d-flex align-items-center gap-2 text-end"
-    aria-label={`Next project: ${nextLink.title}`}
-  >
-    <div>
-      <div className="">Next Project</div>
-      <div className="fw-semibold">{nextLink.title}</div>
-    </div>
-    <ChevronRight className="chevron-icon" />
-  </a>
-)}
-
-  </div>
-</FadeInWhenVisible>
-
-
+            {/* Next Project */}
+            {nextLink && (
+              <a
+                href={nextLink.href}
+                className="chevron-link text-decoration-none d-flex align-items-center gap-2 text-end"
+                aria-label={`Next project: ${nextLink.title}`}
+              >
+                <div>
+                  <div className="">Next Project</div>
+                  <div className="fw-semibold">{nextLink.title}</div>
+                </div>
+                <ChevronRight className="chevron-icon" />
+              </a>
+            )}
+          </div>
+        </FadeInWhenVisible>
       </div>
     </motion.section>
   );

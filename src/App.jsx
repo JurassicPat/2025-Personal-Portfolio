@@ -47,13 +47,6 @@ export default function App() {
     };
   }, [location, matches]);
 
-  const handleConsentAccept = () => {
-    localStorage.setItem("cookieConsent", "true");
-    initGA();
-    setHasConsent(true);
-    logPageView(location.pathname + location.search);
-  };
-
   return (
     <>
      <ScrollToTop />
