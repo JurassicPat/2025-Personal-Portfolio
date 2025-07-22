@@ -27,7 +27,7 @@ export default function ProjectCardsSection() {
                     <div className="project-number">
                       {String(index + 1).padStart(2, "0")}
                     </div>
-                    <h3>{project.title}</h3>
+                    <h1>{project.title}</h1>
                     <p className="tagline">{project.summary}</p>
                     <a
                       href={`/project/${project.slug}`}
