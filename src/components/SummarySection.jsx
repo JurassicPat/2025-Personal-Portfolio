@@ -23,9 +23,16 @@ export default function SummarySection() {
 
               <a
                 className="learn-more-link chevron-link"
-                onClick={() => setShowContact(true)}
+                href="#"
+                role="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowContact(true);
+                }}
+                aria-label="Get in Touch"
               >
-                Get in Touch<ChevronRight className="chevron-icon" />
+                Get in Touch
+                <ChevronRight className="chevron-icon" />
               </a>
             </div>
           </div>
