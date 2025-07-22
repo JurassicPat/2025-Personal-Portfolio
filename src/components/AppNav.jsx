@@ -61,6 +61,7 @@ export default function AppNav() {
           rel="noreferrer"
           onClick={() => logEvent("External Click", "LinkedIn")}
           className="nav-link text-light"
+          aria-label="LinkedIn profile of Patrick Watertor"
         >
           <Linkedin />
         </a>
