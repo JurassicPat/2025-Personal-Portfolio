@@ -13,7 +13,7 @@ export default function SummarySection() {
         <FadeInWhenVisible>
           <div className="row">
             <div className="col-md-8 offset-md-3">
-              <h2 className="mb-3">Let’s Build Something Together</h2>
+              <h2 className="mb-3">Let’s Go on an Adventure</h2>
 
               <p className="tagline">
                 Whether you're starting from scratch or need a fresh
