@@ -2,6 +2,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import dottedLine from "../assets/dotted-line-side.png";
+
 
 export default function NotFound() {
   return (
@@ -13,6 +15,12 @@ export default function NotFound() {
           Back to Home <ChevronRight className="chevron-icon" />
         </a>
       </div>
+       <img
+        src={dottedLine}
+        alt="decorative dotted line"
+        className="w-100 mt-5"
+        style={{ objectFit: "cover" }}
+      />
     </main>
   );
 }
