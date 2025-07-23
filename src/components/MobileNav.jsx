@@ -7,13 +7,29 @@ export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [showContact, setShowContact] = useState(false);
 
-  const toggleMenu = () => setIsOpen((prev) => !prev);
+  // Toggle menu open/close and close contact modal if menu is opening
+  const toggleMenu = () => {
+    setIsOpen((prev) => {
+      const newState = !prev;
+      if (newState) {
+        setShowContact(false); // Close contact modal when menu opens
+      }
+      return newState;
+    });
+  };
+
   const closeMenu = () => setIsOpen(false);
+
+  // Open contact modal, close menu simultaneously
+  const openContact = () => {
+    setShowContact(true);
+    setIsOpen(false);
+  };
 
   const links = [
     { name: "Projects", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Contact", action: () => setShowContact(true) },
+    { name: "Contact", action: openContact },
     {
       name: "Resume",
       path: "/Patrick-Watertor-2025-Resume.pdf",
@@ -45,61 +61,62 @@ export default function MobileNav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-           <motion.ul
-  className="mobile-nav-links"
-  initial="hidden"
-  animate="visible"
-  exit="hidden"
-  variants={{
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }}
->
-  {links.map((link, index) => {
-    // Determine if separator needed before this item
-    const needsSeparator = ["Resume", "LinkedIn"].includes(link.name);
+            <motion.ul
+              className="mobile-nav-links"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+            >
+              {links.map((link, index) => {
+                // Determine if separator needed before this item
+                const needsSeparator = ["Resume", "LinkedIn"].includes(
+                  link.name
+                );
 
-    return (
-      <React.Fragment key={index}>
-        {needsSeparator && (
-          <motion.li
-            className="mobile-nav-separator"
-            aria-hidden="true"
-            variants={linkVariants}
-          />
-        )}
+                return (
+                  <React.Fragment key={index}>
+                    {needsSeparator && (
+                      <motion.li
+                        className="mobile-nav-separator"
+                        aria-hidden="true"
+                        variants={linkVariants}
+                      />
+                    )}
 
-        {link.action ? (
-          <motion.li
-            variants={linkVariants}
-            onClick={() => {
-              link.action();
-              closeMenu();
-            }}
-          >
-            {link.name}
-          </motion.li>
-        ) : link.external ? (
-          <motion.li variants={linkVariants} onClick={closeMenu}>
-            <a href={link.path} target="_blank" rel="noreferrer">
-              {link.name}
-            </a>
-          </motion.li>
-        ) : (
-          <motion.li variants={linkVariants}>
-            <NavLink to={link.path} onClick={closeMenu}>
-              {link.name}
-            </NavLink>
-          </motion.li>
-        )}
-      </React.Fragment>
-    );
-  })}
-</motion.ul>
-
+                    {link.action ? (
+                      <motion.li
+                        variants={linkVariants}
+                        onClick={() => {
+                          link.action();
+                          closeMenu();
+                        }}
+                      >
+                        {link.name}
+                      </motion.li>
+                    ) : link.external ? (
+                      <motion.li variants={linkVariants} onClick={closeMenu}>
+                        <a href={link.path} target="_blank" rel="noreferrer">
+                          {link.name}
+                        </a>
+                      </motion.li>
+                    ) : (
+                      <motion.li variants={linkVariants}>
+                        <NavLink to={link.path} onClick={closeMenu}>
+                          {link.name}
+                        </NavLink>
+                      </motion.li>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+            </motion.ul>
           </motion.div>
         )}
       </AnimatePresence>
