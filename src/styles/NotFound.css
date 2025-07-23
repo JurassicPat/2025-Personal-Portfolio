@@ -65,3 +65,10 @@
 .learn-more-link:hover .chevron-icon {
   animation: wiggle 0.6s ease-in-out;
 }
+
+.not-found-page .site-footer {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%,-50%);
+}
