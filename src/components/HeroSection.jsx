@@ -39,7 +39,7 @@ export default function HeroSection() {
             </p>
             <h1 className="display-4 fw-bold">Patrick</h1>
             <p className="mb-4 tagline">
-              Solving complex problems with creative UX, clean design, and front-end code. Our adventure begins here.
+              Solving complex problems with creative UX, clean design, and front-end code. Our journey begins here.
             </p>
             <a href="/about" className="learn-more-link d-inline-flex align-items-center gap-2">
               Learn More About Me <ChevronRight className="chevron-icon" />
