@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 20%;
+  padding-left: 3rem;
   z-index: 2;
   pointer-events: none;
   display: flex;

@@ -50,7 +50,7 @@ export default function App() {
   return (
     <>
      <ScrollToTop />
-      <VerticalLine />
+      <VerticalLine key={location.pathname} />
       <div className="desktop-nav-wrapper">
       <AppNav />
       </div>

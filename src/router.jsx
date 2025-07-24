@@ -13,13 +13,13 @@ export const router = createBrowserRouter([
     children: [
       { path: "", element: <Home /> },
       { path: "about", element: <About /> },
-     { path: "project/:slug", element: <ProjectPage /> },
-     { path: "privacy", element: <Privacy /> },
-     {
-  path: "*",
-  element: <NotFound />,
-  handle: { pageClass: "not-found" },
-},
+      { path: "project/:slug", element: <ProjectPage /> },
+      { path: "privacy", element: <Privacy /> },
+      {
+        path: "*",
+        element: <NotFound />,
+        handle: { pageClass: "not-found" },
+      },
     ],
   },
 ]);
