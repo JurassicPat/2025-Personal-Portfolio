@@ -16,9 +16,16 @@
 
     <!-- CookieConsent v3 -->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
-    />
+  rel="preload"
+  as="style"
+  href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+  onload="this.onload=null;this.rel='stylesheet'"
+  crossorigin="anonymous"
+/>
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+</noscript>
+
     <!-- Critical (loads immediately) -->
     <link rel="stylesheet" href="/src/styles/critical.css" />
 
