@@ -1,12 +1,14 @@
 // src/pages/About.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import { Gem, Github, Linkedin, Send, ChevronRight } from "lucide-react";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
-import LogoCarousel from "../components/LogoCarousel";
-import SkillsToolsTech from "../components/SkillsToolsTech";
-import ContactModal from "../components/ContactModal";
 import "../styles/About.css";
+
+// Lazy-load large components
+const LogoCarousel = lazy(() => import("../components/LogoCarousel"));
+const SkillsToolsTech = lazy(() => import("../components/SkillsToolsTech"));
+const ContactModal = lazy(() => import("../components/ContactModal"));
 
 export default function About() {
   const [showContact, setShowContact] = useState(false);
@@ -106,14 +108,18 @@ export default function About() {
         </FadeInWhenVisible>
 
         <FadeInWhenVisible direction="left">
-          <SkillsToolsTech />
+          <Suspense fallback={<div>Loading skills...</div>}>
+            <SkillsToolsTech />
+          </Suspense>
         </FadeInWhenVisible>
 
         <FadeInWhenVisible direction="bottom">
           <div className="row mb-5">
             <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
               <h3 className="fw-bold">Companies I’ve Designed For</h3>
-              <LogoCarousel />
+              <Suspense fallback={<div style={{ height: "80px" }}>Loading carousel...</div>}>
+                <LogoCarousel />
+              </Suspense>
             </div>
           </div>
         </FadeInWhenVisible>
@@ -174,10 +180,13 @@ export default function About() {
             </div>
           </div>
         </FadeInWhenVisible>
-        <ContactModal
-          show={showContact}
-          onClose={() => setShowContact(false)}
-        />
+
+        <Suspense fallback={null}>
+          <ContactModal
+            show={showContact}
+            onClose={() => setShowContact(false)}
+          />
+        </Suspense>
       </section>
     </motion.main>
   );
