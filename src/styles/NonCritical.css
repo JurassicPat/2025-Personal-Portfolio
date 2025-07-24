@@ -1,3 +1,5 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
 @import "./ConsentBanner.css";
 @import "./BackToTop.css";
 @import "./VerticalLine.css";
