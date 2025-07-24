@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import compression from 'vite-plugin-compression';
+import { visualizer } from 'rollup-plugin-visualizer';
+
 
 export default defineConfig({
   plugins: [
@@ -28,6 +30,12 @@ export default defineConfig({
       ext: '.br',
       threshold: 10240,
     }),
+    visualizer({
+  open: true,
+  filename: 'dist/stats.html',
+  template: 'treemap', // other options: 'sunburst', 'network'
+}),
+
   ],
   build: {
     target: 'es2020', // Target modern browsers only
