@@ -90,34 +90,39 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>
-      window.addEventListener("load", function () {
-        window.cookieconsent.initialise({
-          palette: {
-            popup: { background: "#000" },
-            button: { background: "#ffb81c" },
-          },
-          theme: "classic",
-          position: "bottom",
-          type: "opt-in",
-          content: {
-            message: "This site uses cookies to enhance your experience.",
-            dismiss: "Allow",
-            deny: "Decline",
-            link: "Learn more",
-            href: "/privacy",
-          },
-          onInitialise: function (status) {
-            if (status === cookieconsent.status.allow) {
-              window.dispatchEvent(new Event("consent-granted"));
-            }
-          },
-          onStatusChange: function (status) {
-            if (status === cookieconsent.status.allow) {
-              window.dispatchEvent(new Event("consent-granted"));
-            }
-          },
-        });
-      });
-    </script>
+window.addEventListener("load", function() {
+  if (window.cookieconsent && typeof window.cookieconsent.initialise === "function") {
+    window.cookieconsent.initialise({
+      palette: {
+        popup: { background: "#000" },
+        button: { background: "#ffb81c" },
+      },
+      theme: "classic",
+      position: "bottom",
+      type: "opt-in",
+      content: {
+        message: "This site uses cookies to enhance your experience.",
+        dismiss: "Allow",
+        deny: "Decline",
+        link: "Learn more",
+        href: "/privacy",
+      },
+      onInitialise: function (status) {
+        if (status === cookieconsent.status.allow) {
+          window.dispatchEvent(new Event("consent-granted"));
+        }
+      },
+      onStatusChange: function (status) {
+        if (status === cookieconsent.status.allow) {
+          window.dispatchEvent(new Event("consent-granted"));
+        }
+      },
+    });
+  } else {
+    console.warn("CookieConsent script blocked or failed to load.");
+  }
+});
+</script>
+
   </body>
 </html>
