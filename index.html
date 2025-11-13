@@ -11,22 +11,22 @@
     />
     <title>Patrick Watertor | Portfolio Website</title>
 
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
-    <!-- CookieConsent v3 CSS -->
+    <!-- CookieConsent v3 CSS (self-hosted) -->
     <link
       rel="preload"
       as="style"
-      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+      href="/libs/cookieconsent/cookieconsent.min.css"
       onload="this.onload=null;this.rel='stylesheet'"
-      crossorigin="anonymous"
     />
     <noscript>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+      <link rel="stylesheet" href="/libs/cookieconsent/cookieconsent.min.css" />
     </noscript>
 
-    <!-- Critical CSS (includes font-family application) -->
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="/src/styles/critical.css" />
 
     <!-- Non-critical CSS -->
@@ -40,7 +40,7 @@
       <link rel="stylesheet" href="/src/styles/NonCritical.css" />
     </noscript>
 
-    <!-- Preload fonts (used in critical CSS immediately) -->
+    <!-- Preload fonts (used in critical CSS) -->
     <link
       rel="preload"
       href="/assets/fonts/outfit-latin-300-normal.woff2"
@@ -63,8 +63,8 @@
       crossorigin="anonymous"
     />
 
-    <!-- CookieConsent JS -->
-    <script defer src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <!-- CookieConsent JS (self-hosted) -->
+    <script defer src="/libs/cookieconsent/cookieconsent.min.js"></script>
   </head>
   <body style="background-color: #1a1a1a">
     <div id="root"></div>
