@@ -11,11 +11,7 @@
     />
     <title>Patrick Watertor | Portfolio Website</title>
 
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-
-    <!-- CookieConsent v3 CSS (self-hosted) -->
+    <!-- CookieConsent CSS (self-hosted) -->
     <link
       rel="preload"
       as="style"
@@ -40,7 +36,7 @@
       <link rel="stylesheet" href="/src/styles/NonCritical.css" />
     </noscript>
 
-    <!-- Preload fonts (used in critical CSS) -->
+    <!-- Preload fonts -->
     <link
       rel="preload"
       href="/assets/fonts/outfit-latin-300-normal.woff2"
@@ -66,12 +62,13 @@
     <!-- CookieConsent JS (self-hosted) -->
     <script defer src="/libs/cookieconsent/cookieconsent.min.js"></script>
   </head>
+
   <body style="background-color: #1a1a1a">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
     <script>
-      // Initialize CookieConsent on DOM ready
+      /* Initialize CookieConsent */
       document.addEventListener("DOMContentLoaded", function () {
         if (window.cookieconsent && typeof window.cookieconsent.initialise === "function") {
           window.cookieconsent.initialise({
@@ -102,19 +99,20 @@
         }
       });
 
-      // Load analytics & Clarity only after consent
+      /* Load Analytics After Consent */
       window.addEventListener("consent-granted", () => {
         // Google Analytics
         const ga = document.createElement("script");
         ga.src = "https://www.googletagmanager.com/gtag/js?id=G-LNTDSW0VX0";
         ga.async = true;
         document.head.appendChild(ga);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-LNTDSW0VX0');
+        gtag("js", new Date());
+        gtag("config", "G-LNTDSW0VX0");
 
-        // Microsoft Clarity
+        // Clarity
         (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
